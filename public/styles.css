@@ -1,14 +1,27 @@
 /* Clown Around games site styles */
 
+/*
+font-family: 'Alice', serif;
+font-family: 'Rubik Mono One', monospace;
+font-family: 'Spline Sans Mono', monospace;
+font-family: 'Yeseva One', serif;
+*/
+
 /* tags */
 body {
     margin: 0;
 
     background-color: slateblue;
+
+    font-family: "Rubik Mono One", monospace;
 }
 
 header {
+    position: relative;
+    padding: 15px 0;
     background-color: yellowgreen;
+    overflow: visible;
+    z-index: 1000;
 }
 
 header > h1 {
@@ -26,6 +39,60 @@ header > h1 {
 }
 
 /* class */
+.title {
+    text-align: center;
+    font-family: "Alice", serif;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+
+    width: 80px;
+    height: 60px;
+    translate: 0 -50%;
+
+    background-color: yellow;
+}
+
+.menu > * {
+    text-align: center;
+}
+
+.menu:hover > .popup {
+    display: block;
+    top: 40px;
+    scale: 1;
+    opacity: 1;
+}
+
+.popup {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+
+    width: 300px;
+    height: 400px;
+
+    padding-top: 20px;
+
+    rotate: -5deg;
+    scale: 0.05;
+    transform-origin: 0 0;
+
+    opacity: 0;
+
+    transition: top 300ms;
+
+    background-color: whitesmoke;
+}
+
+.popup > * {
+    margin: 16px 16px;
+    rotate: 5deg;
+}
+
 .reel {
     position: relative;
     background-color: purple;
@@ -34,7 +101,13 @@ header > h1 {
     height: 400px;
 }
 
-.reel-item {
+.carousel {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+.carousel-item {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,73 +118,12 @@ header > h1 {
     background-color: orangered;
 }
 
-.reel-controller {
+.carousel-image {
     position: absolute;
-    top: 300px;
-    left: 50%;
-    transform: translate(-50%,0);
-
-    z-index: 300;
-
-    width: 400px;
-    height: 30px;
-
-    background-color: brown;
-
-    border-radius: 5px;
-}
-
-.reel-controller > div {
-    display: inline-block;
-}
-
-.control-button {
-    position: absolute;
+    width: 100%;
     height: 100%;
-    aspect-ratio: 1;
-
-    z-index: 310;
-    
-    background-color: black;
-    clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
-}
-
-.control-button:hover {
-    cursor: pointer;
-}
-
-.control-button:active {
-    background-color: grey;
-}
-
-.progress-bar-track {
-    display: flex;
-    flex-direction: row;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-    z-index: 310;
-
-    width: 80%;
-    height: 60%;
-
-    background-color: rgba(0,0,0,25%);
-    border-radius: 100px;
-}
-
-.progress-bar {
-    position: absolute;
-    left: 0;
-    width: 50%;
-    height: 100%;
-
-    z-index: 311;
-
-    background-color: rgba(0,0,0,25%);
-    border-radius: 100px;
-
-    transition: left 0.25s;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

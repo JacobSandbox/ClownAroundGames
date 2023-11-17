@@ -8,7 +8,7 @@ function Reel ( props ) {
     return <div className="reel">
         <Carousel items={props.items}/>
         <ReelController steps="3" />
-    </div>
+    </div>;
 }
 
 export default Reel; 

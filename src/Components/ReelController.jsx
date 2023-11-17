@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/ReelController.css";
 
 function ReelController ( props ) {
     const [progress, setProgress] = React.useState(0);
@@ -20,7 +21,7 @@ function ReelController ( props ) {
             </div>
         </div>
         <div id="right-button" className="control-button" onClick={()=>{changeProgress(1);}}></div>
-    </div>
+    </div>;
 }
 
 export default ReelController;

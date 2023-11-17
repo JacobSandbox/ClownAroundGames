@@ -1,0 +1,28 @@
+/* Stylesheet for MenuItem component */
+
+.menu-item {
+    margin: 16px 0 0 50%;
+    translate: -50%;
+    width: 75%;
+    background-color: aquamarine;
+}
+
+.menu-item-cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: auto;
+    height: 100%;
+
+    opacity: 0;
+
+    font-style: italic;
+
+    transition: right 200ms;
+}
+
+.menu-item:hover > .menu-item-cursor {
+    opacity: 1;
+    right: -10px
+}

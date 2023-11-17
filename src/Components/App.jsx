@@ -3,9 +3,9 @@ import Header from "./Header";
 import Reel from "./Reel";
 
 let items = [
-  {id:0,url:"alpha",alt:"one"},
-  {id:1,url:"beta",alt:"two"},
-  {id:2,url:"gamma",alt:"three"},
+  {id:0,imgUrl:"./images/elephent.jpg",alt:"one"},
+  {id:1,imgUrl:"./images/red_tent.jpg",alt:"two"}//,
+  //{id:2,imgUrl:"./images/blue_tent.jpg",alt:"three"},
 ]
 
 function App() {
