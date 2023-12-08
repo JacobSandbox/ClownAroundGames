@@ -1,0 +1,19 @@
+/* Stylesheet for Footer */
+
+.footer {
+    position: relative;
+    padding: 0.5rem 0;
+
+    font-size: 0.75rem;
+    text-align: center;
+
+    background-color: yellowgreen;
+}
+
+.footer-return {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+
+    margin-top: 0.5rem;
+}

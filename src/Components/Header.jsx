@@ -1,17 +1,14 @@
 import React from "react";
-import MenuItem from "./MenuItem";
+import "./styles/Header.css";
+import SearchBar from "./SearchBar";
+import Menu from "./Menu";
 
-function Header() {
-    return <header>
-        <div className="menu">
-            <p>menu</p>
-                <div className="popup">
-                    <MenuItem text="test"/>
-                    <MenuItem text="test"/>
-                    <MenuItem text="test"/>
-                </div>
-            </div>
-        <h1 className="title">Clown Around Games</h1>
+function Header ( props ) {
+    return <header className="header">
+        <h1 className="header-title">Clown Around Games</h1>
+        <Menu items={props.menuItems}/>
+        <div className="header-spacer"></div>
+        <SearchBar/>
     </header>;
 }
 

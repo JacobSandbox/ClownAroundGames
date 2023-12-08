@@ -1,0 +1,95 @@
+/* Stylesheet for game info display page */
+
+body {
+    background-color: white;
+    scroll-behavior: smooth;
+}
+
+.gamepage-body {
+    margin: 4rem 2rem 2rem 2rem;
+    width: min(auto,1080px);
+    background-color: red;
+}
+
+.gamepage-title {
+    position: relative;
+
+    margin: 1rem 0;
+    padding: 0 1rem;
+
+    font-size: 3rem;
+
+    /* background-color: yellowgreen; */
+    /* border-radius: 50px; */
+    /* background-image: url("../../../public/images/title_banner.png"); */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.gamepage-title::before {
+    content: "";
+
+    position: absolute;
+    top: -100px;
+    width: 500px;
+    height: 500px;
+    z-index: -1;
+
+    box-shadow:
+     0 0 0 10px white,
+     0 0 0 30px yellowgreen,
+     0 0 0 50px white,
+     0 0 0 65px yellowgreen,
+     0 0 0 95px white,
+     0 0 0 105px yellowgreen;
+
+    rotate: -15deg;
+
+    background-color: yellowgreen;
+    /* border-radius: 100px; */
+/* 
+    transform-origin: 25% 50%;
+    rotate: -2deg; */
+}
+
+.gamepage-top {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 2rem 0;
+
+    position: relative;
+    height: calc( min(50vw, 45rem) * 0.5625 );
+
+    background-color: lightgray;
+}
+
+.gamepage-bottom {
+    width: 100%;
+
+    /* background-color: cadetblue; */
+
+    font-family: 'Alice', serif;
+/* font-family: 'Rubik Mono One', monospace; */
+/* font-family: 'Spline Sans Mono', monospace; */
+/* font-family: 'Yeseva One', serif; */
+}
+
+.gamepage-headline {
+    font-size: 3rem;
+}
+
+.gamepage-content {
+    text-indent: 5rem;
+}
+
+.gamepage-credits {
+    font-style: italic;
+
+    margin: 1rem 0;
+}

@@ -7,6 +7,15 @@ font-family: 'Spline Sans Mono', monospace;
 font-family: 'Yeseva One', serif;
 */
 
+/* reset */
+img {
+    font-style: italic;
+}
+
+p {
+    margin: 0;
+}
+
 /* tags */
 body {
     margin: 0;
@@ -14,18 +23,6 @@ body {
     background-color: slateblue;
 
     font-family: "Rubik Mono One", monospace;
-}
-
-header {
-    position: relative;
-    padding: 15px 0;
-    background-color: yellowgreen;
-    overflow: visible;
-    z-index: 1000;
-}
-
-header > h1 {
-    margin: 0;
 }
 
 /* id */
@@ -39,12 +36,8 @@ header > h1 {
 }
 
 /* class */
-.title {
-    text-align: center;
-    font-family: "Alice", serif;
-}
 
-.menu {
+/* .menu {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -65,7 +58,7 @@ header > h1 {
     top: 40px;
     scale: 1;
     opacity: 1;
-}
+} */
 
 .popup {
     position: fixed;

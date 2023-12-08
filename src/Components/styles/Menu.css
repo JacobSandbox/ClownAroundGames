@@ -1,0 +1,78 @@
+/* Stylesheet for menu widget */
+
+:root {
+    --menu-height: 7.25rem;
+}
+
+.menu-container {
+    position: relative;
+    width: 8rem;
+    height: 2rem;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.menu-content {
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+
+    background-color: orange;
+    border-radius: 5px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: height 200ms;
+}
+
+.menu-content:hover {
+    height: var(--menu-height);
+    filter: drop-shadow(5px 5px 5px black);
+}
+
+.menu-item-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--menu-height);
+
+    background-color: yellowgreen;
+}
+
+.menu-item {
+    display: block;
+    margin: 0.5rem;
+    
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 0.75rem;
+    
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition: rotate 150ms, background-color 150ms;
+}
+
+.menu-item:hover {
+    rotate: -5deg;
+}
+
+.menu-item:active {
+    background-color: white;
+}
+
+.menu-item:first-child {
+    font-size: 1rem;
+    transition: rotate 150ms;
+}
+
+.menu-control {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}

@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+
+    background-color: yellowgreen;
+
+    overflow: visible;
+    
+}
+
+.header-title {
+    margin: 0 1rem 0 0;
+    flex: 1fr;
+    
+    text-align: left;
+    font-family: "Alice", serif;
+    font-size: 1.75rem;
+}
+
+.header-spacer {
+    flex: auto;
+}
