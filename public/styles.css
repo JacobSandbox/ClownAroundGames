@@ -19,10 +19,10 @@ p {
 /* tags */
 body {
     margin: 0;
-
-    background-color: slateblue;
-
+    
     font-family: "Rubik Mono One", monospace;
+
+    scroll-behavior: smooth;
 }
 
 /* id */

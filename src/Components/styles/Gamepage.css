@@ -2,13 +2,16 @@
 
 body {
     background-color: white;
-    scroll-behavior: smooth;
+}
+
+.gamepage-root {
+    position: relative;
 }
 
 .gamepage-body {
-    margin: 4rem 2rem 2rem 2rem;
-    width: min(auto,1080px);
-    background-color: red;
+    margin: 4rem auto 2rem auto;
+
+    width: min(calc(100% - 4rem),1080px);
 }
 
 .gamepage-title {
@@ -29,7 +32,7 @@ body {
     overflow: hidden;
 }
 
-.gamepage-title::before {
+/*.gamepage-title::before {
     content: "";
 
     position: absolute;
@@ -49,11 +52,11 @@ body {
     rotate: -15deg;
 
     background-color: yellowgreen;
-    /* border-radius: 100px; */
-/* 
+    border-radius: 100px;
+ 
     transform-origin: 25% 50%;
-    rotate: -2deg; */
-}
+    rotate: -2deg;
+} */
 
 .gamepage-top {
     display: flex;
@@ -64,7 +67,6 @@ body {
     margin: 0 0 2rem 0;
 
     position: relative;
-    height: calc( min(50vw, 45rem) * 0.5625 );
 
     background-color: lightgray;
 }
@@ -81,10 +83,16 @@ body {
 }
 
 .gamepage-headline {
+    display: inline;
+    
+    padding: 0 0.5rem 0 0;
+    position: relative;
+
     font-size: 3rem;
 }
 
 .gamepage-content {
+    display: inline;
     text-indent: 5rem;
 }
 

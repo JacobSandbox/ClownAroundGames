@@ -1,27 +1,34 @@
 // Game stats/buy button display
 import "./styles/GameStats.css";
 
-function GameStats() {
+// Props
+/*
+    "metadata" : {
+        "players" : string,
+        "time" : number,
+        "genre" : string
+    }
+*/
+
+function GameStats ( props ) {
     return (
         <div class="game-stats-container">
 
-            <p class="game-stats-title">
-                Game Title
-            </p>
+            <p class="game-stats-title"> {props.meta.genre} </p>
 
-            <div class="game-stats-btn game-stats-number">
-                <p>Plrs</p>
+            <div class="game-stats-icon game-stats-number">
+                <p>{props.meta.players}</p>
             </div>
 
-            <div class="game-stats-btn game-stats-time">
-                <p>Time</p>
+            <div class="game-stats-icon game-stats-time">
+                <p>{props.meta.time}'</p>
             </div>
 
-            <div class="game-stats-btn game-stats-genre">
-                <p>Genre</p>
+            <div class="game-stats-icon game-stats-genre">
+                <p>{props.meta.genre}</p>
             </div>
 
-            <p className="game-stats-label">--{'>'}</p>
+            <div className="game-stats-label"></div>
 
             <div class="game-stats-purchase-container">
                 <div class="game-stats-purchase">

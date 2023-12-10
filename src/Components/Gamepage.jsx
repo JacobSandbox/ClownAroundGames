@@ -10,21 +10,66 @@ import "./styles/Gamepage.css"
 var imageData = '{"setup":"https://picsum.photos/400","zoom":"https://picsum.photos/300","action":"https://picsum.photos/200","detail":"https://picsum.photos/100"}';
 // var imageData = '{"setup":"","zoom":"","action":"","detail":""}';
 
-function Gamepage(props) {
+// Props format
+/*
+{
+    "photos" : {
+        "path" : string ('./path/name... etc'  4 photos named 'setup.png', 'zoom.png', 'action.png', 'detail.png')
+    },
+
+    "title" : string,
+
+    "metadata" : {
+        "players" : string,
+        "time" : number,
+        "genre" : string
+    },
+
+    "content" : {
+        "description" : string,
+        "documents" : [string]
+    },
+
+    "credits" : {
+        "design" : string,
+        "art" : string,
+        "year" : number
+    }
+}
+*/
+
+function Gamepage ( props ) {
+    
+    // Parse JSON game data
+    if ( props.gameData === undefined ) return <h1>ERROR: NO GAME DATA SUPPLIED</h1>
+    let info = JSON.parse(props.gameData);
+    let desc = info.content.description.split(" ");
+
+    // Generate page from data
     return (
-        <div>
+        <div className="gamepage-root">
             <Header menuItems={["Home", "About", "Contact"]} />
             <div className="gamepage-body">
+                <h1 className="gamepage-title">{info.title}</h1>
                 <div className="gamepage-top">
                     <ImageCollage imageData={imageData} />
-                    <GameStats />
+                    <GameStats meta={info.metadata}/>
                 </div>
                 <div className="gamepage-bottom">
-                    <p className="gamepage-headline">HEADLINE</p>
-                    <p className="gamepage-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut augue interdum, scelerisque purus a, pharetra ipsum. Cras congue molestie sapien, vestibulum mattis velit egestas et. Nullam nibh quam, fringilla et eros id, volutpat posuere nulla. Quisque nec leo lacus. Fusce ut leo tincidunt, venenatis diam nec, faucibus metus. Integer id nisl rutrum, pellentesque metus et, varius ante. Morbi egestas ornare ex ornare aliquet. Praesent ut massa sit amet ante molestie aliquet. Donec ex elit, dignissim aliquam porttitor at, finibus eget velit. Aenean eget lobortis sapien. Pellentesque dapibus tortor vel cursus bibendum. Proin sed auctor neque. Sed augue sem, vestibulum vitae tempor eu, luctus vel metus. Curabitur nec tortor ac tortor iaculis elementum dapibus sed erat.
-                        Praesent in tincidunt dui. Suspendisse porttitor porta nisl, ut vestibulum tellus porttitor nec. Duis ac purus eu mi lacinia ullamcorper. Pellentesque nec blandit sem. Phasellus mattis vehicula lacus, non aliquam ligula lobortis a. Vestibulum mollis sapien congue augue malesuada, id molestie urna efficitur. Vivamus metus mauris, rutrum a efficitur ut, maximus sit amet ante. Vestibulum libero nisi, placerat non sapien eget, mollis luctus velit. Nullam id est elit. Suspendisse potenti.
-                        Donec ex purus, mattis quis massa quis, sollicitudin pulvinar arcu. Sed venenatis ligula magna, ac mollis dui posuere vestibulum. Nam tristique id diam vitae dapibus. Nunc neque enim, facilisis in neque eu, porttitor pretium enim. Aliquam ac ante quis metus mattis imperdiet. Vivamus facilisis eleifend bibendum. Maecenas enim ipsum, laoreet cursus lacus condimentum, dictum porttitor libero.</p>
-                    <p className="gamepage-credits">CREDITS <br/> Design and Art by ME ME ME <br/> Released 2023</p>
+                    <p className="gamepage-headline">{desc[0]}</p>
+                    <p className="gamepage-content">{desc.slice(1, -1).join(" ")}</p>
+                    <p> <br /> DOCUMENTS <hr /> links...</p>
+                    <p className="gamepage-credits">
+                        CREDITS
+                        <br/>
+                        <hr />
+                        {
+                            (info.credits.design === info.credits.art) ?
+                                <p>Art and Design by {info.credits.design}</p> :
+                                <p>Game Design by {info.credits.design}<br /> Art by {info.credits.art}</p>
+                        }
+                        Released {info.credits.year}
+                    </p>
                 </div>
             </div>
             <Footer />
