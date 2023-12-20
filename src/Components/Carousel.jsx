@@ -1,20 +1,17 @@
 import React from "react";
+import Reel from "./Reel";
+import ReelController from "./ReelController";
+import "./styles/Carousel.css";
+
+// Info display reel
 
 function Carousel ( props ) {
+    const [slide, setSlide] = React.useState(0);
+
     return <div className="carousel">
-        {JSON.parse(props.items).map(item => {
-            let parts = item.imgUrl.split(".");
-            let lowres = 'url("' + parts[0] + '_lowres.' + parts[1] + '")';
-            return <div key={item.id} className="carousel-item">
-                <img 
-                    className="carousel-image"
-                    src={item.imgUrl}
-                    alt={item.alt} 
-                    style={{backgroundImage:lowres}}
-                    />
-            </div>
-        })}
+        <Reel items={props.items} slide={slide}/>
+        <ReelController steps={props.itemCount} hook={setSlide}/>
     </div>;
 }
 
-export default Carousel;
+export default Carousel; 

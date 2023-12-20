@@ -20,7 +20,7 @@
     display: inline-block;
 }
 
-.control-button {
+.reel-control-button {
     position: absolute;
     height: 100%;
     aspect-ratio: 1;
@@ -31,15 +31,15 @@
     clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
 }
 
-.control-button:hover {
+.reel-control-button:hover {
     cursor: pointer;
 }
 
-.control-button:active {
+.ree-lcontrol-button:active {
     background-color: grey;
 }
 
-.progress-bar-track {
+.reel-control-progress-bar-track {
     display: flex;
     flex-direction: row;
 
@@ -57,7 +57,7 @@
     border-radius: 100px;
 }
 
-.progress-bar {
+.reel-control-progress-bar {
     position: absolute;
     left: 0;
     width: 50%;
@@ -69,4 +69,13 @@
     border-radius: 100px;
 
     transition: left 0.25s;
+}
+
+.reel-control-left {
+    left: 0px;
+    transform: rotate(180deg);
+}
+
+.reel-control-right {
+    right: 0px;
 }

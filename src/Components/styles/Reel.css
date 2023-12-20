@@ -1,0 +1,36 @@
+/* Stylesheet for reel component */
+
+.reel {
+    display: flex;
+    flex-direction: row;
+    /* gap: 5rem; */
+
+    margin: auto;
+
+    height: 100%;
+    aspect-ratio: 1;
+
+    overflow: hidden;
+}
+
+.reel-item {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    left: 0;
+
+    background-color: orangered;
+
+    transition: left 0.25s, rotate 0.25s;
+}
+
+.reel-image {
+    position: relative;
+    height: 100%;
+
+    vertical-align: middle;
+    font-style: italic;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}

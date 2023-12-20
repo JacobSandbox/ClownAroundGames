@@ -1,0 +1,5 @@
+.homepage-content {
+    margin: 0 auto 2rem auto;
+
+    width: min(calc(100% - 4rem),1080px);
+}

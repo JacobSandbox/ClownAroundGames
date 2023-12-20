@@ -1,0 +1,11 @@
+/* Stylesheet for carousel component */
+
+.carousel {
+    position: relative;
+    background-color: purple;
+
+    width: 100%;
+    height: 400px;
+
+    overflow: hidden;
+}

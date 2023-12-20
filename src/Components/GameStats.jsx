@@ -14,21 +14,21 @@ function GameStats ( props ) {
     return (
         <div class="game-stats-container">
 
-            <p class="game-stats-title"> {props.meta.genre} </p>
+            <p class="game-stats-title"> text text </p>
 
-            <div class="game-stats-icon game-stats-number">
+            <div class="game-stats-label game-stats-number">
                 <p>{props.meta.players}</p>
             </div>
 
-            <div class="game-stats-icon game-stats-time">
+            <div class="game-stats-label game-stats-time">
                 <p>{props.meta.time}'</p>
             </div>
 
-            <div class="game-stats-icon game-stats-genre">
+            <div class="game-stats-label game-stats-genre">
                 <p>{props.meta.genre}</p>
             </div>
 
-            <div className="game-stats-label"></div>
+            <div className="game-stats-icon"></div>
 
             <div class="game-stats-purchase-container">
                 <div class="game-stats-purchase">

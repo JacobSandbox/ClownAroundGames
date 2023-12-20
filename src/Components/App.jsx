@@ -1,5 +1,5 @@
 import React from "react";
-// import Homepage from "./Homepage";
+import Homepage from "./Homepage";
 import Gamepage from "./Gamepage";
 
 var data = 
@@ -29,7 +29,8 @@ var data =
 }
 
 function App() {
-        return <Gamepage gameData={JSON.stringify(data)} />;
+        // return <Gamepage gameData={JSON.stringify(data)} />;
+        return <Homepage />
       }
 
 export default App;
