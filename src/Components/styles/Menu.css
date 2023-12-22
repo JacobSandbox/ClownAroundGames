@@ -44,6 +44,8 @@
 }
 
 .menu-item {
+    position: relative;
+
     display: block;
     margin: 0.5rem;
     
@@ -56,19 +58,48 @@
     cursor: pointer;
 
     transition: rotate 150ms, background-color 150ms;
+
+    z-index: 1;
 }
 
 .menu-item:hover {
     rotate: -5deg;
 }
 
-.menu-item:active {
+/* .menu-item:active {
     background-color: white;
-}
+} */
 
 .menu-item:first-child {
     font-size: 1rem;
     transition: rotate 150ms;
+}
+
+.menu-item::before {
+    content: "";
+
+    position: absolute;
+    inset: 25% 15% 25% 15%;
+
+    background-color: #985BFE;
+    box-shadow: 0 0 5px 5px #985BFE;
+
+    z-index: -1;
+
+    rotate: 0;
+
+    opacity: 0;
+
+    transition: rotate 150ms, opacity 150ms, scale 150ms;
+}
+
+.menu-item:hover::before {
+    rotate: 15deg;
+    opacity: 0.65;
+}
+
+.menu-item:active::before {
+    scale: 0.75;
 }
 
 .menu-control {

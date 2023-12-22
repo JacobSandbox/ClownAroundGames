@@ -126,7 +126,7 @@
     z-index: 2;
 }
 
-.game-stats-purchase:before {
+.game-stats-purchase::before {
     content: "";
     position: absolute;
     top: 0.25rem;
@@ -145,7 +145,7 @@
             black calc(var(--punch) + 0.5%));
 }
 
-.game-stats-purchase:after {
+.game-stats-purchase::after {
     content: "";
     background-image: url("../../../public/images/GC_logo.png");
     background-size: cover;

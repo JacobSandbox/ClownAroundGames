@@ -10,8 +10,6 @@ body {
 
 .gamepage-body {
     margin: 4rem auto 2rem auto;
-
-    width: min(calc(100% - 4rem),1080px);
 }
 
 .gamepage-title {

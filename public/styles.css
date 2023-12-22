@@ -17,14 +17,20 @@ p {
 }
 
 /* tags */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    position: relative;
     margin: 0;
     
     font-family: "Rubik Mono One", monospace;
-
-    scroll-behavior: smooth;
 }
 
 /* id */
 
 /* class */
+.global-content-box {
+    width: min(calc(100% - 4rem),1080px);
+}

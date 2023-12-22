@@ -49,7 +49,7 @@ function Gamepage ( props ) {
     return (
         <div className="gamepage-root">
             <Header menuItems={["Home", "About", "Contact"]} />
-            <div className="gamepage-body">
+            <div className="gamepage-body global-content-box">
                 <h1 className="gamepage-title">{info.title}</h1>
                 <div className="gamepage-top">
                     <ImageCollage imageData={imageData} />

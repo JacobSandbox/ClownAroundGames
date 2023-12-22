@@ -3,14 +3,13 @@
 .reel {
     display: flex;
     flex-direction: row;
-    /* gap: 5rem; */
+    justify-content: flex-start;
 
     margin: auto;
 
-    height: 100%;
-    aspect-ratio: 1;
+    overflow: visible;
 
-    overflow: hidden;
+    /* border: 2px solid red; */
 }
 
 .reel-item {

@@ -1,6 +1,7 @@
 import React from "react";
 import Homepage from "./Homepage";
 import Gamepage from "./Gamepage";
+import Librarypage from "./Librarypage";
 
 var data = 
 {
@@ -30,7 +31,8 @@ var data =
 
 function App() {
         // return <Gamepage gameData={JSON.stringify(data)} />;
-        return <Homepage />
+        // return <Homepage />
+        return <Librarypage />
       }
 
 export default App;

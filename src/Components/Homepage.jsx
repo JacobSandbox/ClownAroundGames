@@ -14,8 +14,12 @@ let items = [
 function Homepage() {
     return (<div>
         <Header menuItems={["Games", "About", "Contact"]}/>
-        <div className="homepage-content">
-            <Carousel items={JSON.stringify(items)} itemCount="3" />
+        <div className="homepage-content global-content-box">
+            <div className="homepage-curtain-container">
+            <div className="homepage-curtain"></div>
+            <div className="homepage-curtain"></div>
+            </div>
+            <Carousel items={JSON.stringify(items)} itemCount="3" size="400" />
         </div>
         <Footer />
     </div>);

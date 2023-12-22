@@ -1,0 +1,45 @@
+/* Stylesheet for library page */
+
+.library-root {
+    overflow: hidden;
+}
+
+.library-content {
+    margin: 2rem auto 2rem auto;
+}
+
+.library-content > div {
+    text-align: center;
+}
+
+.library-controls {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 1rem 0;
+
+    /* background-color: aqua; */
+}
+
+.library-controls label {
+    font-style: italic;
+
+    margin-right: 0.5rem;
+}
+
+.library-browser {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    padding: 2rem 0;
+
+    border: 2px solid lightgrey;
+    border-radius: 1rem;
+
+    /* box-shadow: 0 0 0 3px gray; */
+
+    /* background-color: cadetblue; */
+}
