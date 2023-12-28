@@ -1,21 +1,22 @@
 // Card for displaying library items
+import { Link } from "react-router-dom";
 import "./styles/GameCard.css";
 
 function GameCard ( props ) {
     return (
-        <div class="game-card">
+        <Link to="/detail"> <div class="game-card">
             <div class="game-card-image">
-                <img src="https://picsum.photos/200" alt="box art" />
+                <img src={props.boxart} alt="Box art" />
             </div>
             <div class="game-card-body"></div>
             <div class="game-card-title">
-                <p>test text for formatting</p>
+                <p>{props.gameTitle}</p>
             </div>
-            <div class="game-card-icon"></div>
+            <div class="game-card-icon" style={(props.genre !== undefined) ? {backgroundImage:`url(${props.genre})`} : {}}></div>
             <div class="game-card-shout">
-                <p>Im shoutinG</p>
+                <p>{props.shoutText}</p>
             </div>
-        </div>
+        </div></Link>
     );
 }
 

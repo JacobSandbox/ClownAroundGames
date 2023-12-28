@@ -3,9 +3,20 @@ import React from "react"
 import Header from "./Header";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
-import "./styles/Librarypage.css"
+import "./styles/Librarypage.css";
+
+// Filter functions
+function sortLibrary ( items, func ) {
+    // Sort library items with supplied function
+    let sortedItems = items.sort(func);
+
+    // Get game card elements
+    let cards = document.getElementsByClassName("game-card");
+}
 
 function Librarypage() {
+    let metadata = {type:"board",genre:"fantasy",players:"2-4",time:"short"};
+
     return (
         <div className="library-root">
             <Header menuItems={["Home", "About", "Contact"]} />
@@ -54,7 +65,7 @@ function Librarypage() {
                 </div>
 
                 <div className="library-browser">
-                    <GameCard />
+                    <GameCard boxart="https://picsum.photos/200" gameTitle="test game test" shoutText="WHAAATT!??!?!" genre="https://picsum.photos/100"/>
                     <GameCard />
                     <GameCard />
                     <GameCard />

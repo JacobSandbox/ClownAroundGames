@@ -1,0 +1,14 @@
+// Component to reset page scroll after navigation
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+function ResetScroll() {
+    const {pathname} = useLocation();
+    useEffect( () => {
+        window.scrollTo(0,0);
+    }, [pathname]);
+    return null;
+}
+
+export default ResetScroll;

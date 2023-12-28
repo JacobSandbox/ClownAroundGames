@@ -70,7 +70,7 @@
     background-color: white;
 } */
 
-.menu-item:first-child {
+a:first-child > .menu-item {
     font-size: 1rem;
     transition: rotate 150ms;
 }

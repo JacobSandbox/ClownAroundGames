@@ -2,6 +2,9 @@ import React from "react";
 import Homepage from "./Homepage";
 import Gamepage from "./Gamepage";
 import Librarypage from "./Librarypage";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./NotFound";
+import ResetScroll from "./ResetScroll";
 
 var data = 
 {
@@ -26,13 +29,23 @@ var data =
         design : "ME",
         art : "YOU",
         year : 2023
-    }
+    },
+
+    link: "/..."
 }
 
 function App() {
-        // return <Gamepage gameData={JSON.stringify(data)} />;
-        // return <Homepage />
-        return <Librarypage />
+        return (
+            <BrowserRouter>
+                <ResetScroll />
+                <Routes>
+                    <Route index element={<Homepage />} />
+                    <Route path="games" element={<Librarypage />} />
+                    <Route path="detail"   element={<Gamepage gameData={JSON.stringify(data)} />} />
+                    <Route path="*"       element={<NotFound />} />
+                </Routes>
+            </BrowserRouter>
+        );
       }
 
 export default App;

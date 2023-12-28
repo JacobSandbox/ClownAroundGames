@@ -1,0 +1,24 @@
+/* 404 page stylesheet */
+
+.not-found-content {
+    text-align: center;
+    margin: 4rem;
+}
+
+.not-found-404 {
+    display: inline;
+
+    font-size: 5rem;
+
+    background-color: yellowgreen;
+    border-radius: 10% 100% 10% 100%;
+}
+
+.not-found-link {
+    display: inline;
+
+    padding: 0.5rem 2rem;
+
+    background-color: yellowgreen;
+    border-radius: 50px;
+}
