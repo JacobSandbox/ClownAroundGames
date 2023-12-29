@@ -8,18 +8,18 @@ function ImageCollage ( props ) {
         pics = JSON.parse(props.imageData);
     
     return (
-        <div class="collage-container">
-            <div class="collage-img collage-setup">
+        <div className="collage-container">
+            <div className="collage-img collage-setup">
                 <img src={pics.setup} alt="Game setup" />
             </div>
-            <div class="collage-img collage-zoom">
+            <div className="collage-img collage-zoom">
                 <img src={pics.zoom} alt="Close up of game pieces" />
             </div>
-            <div class="collage-inner">
-                <div class="collage-img collage-action">
+            <div className="collage-inner">
+                <div className="collage-img collage-action">
                     <img src={pics.action} alt="Game in mid-play" />
                 </div>
-                <div class="collage-img collage-detail">
+                <div className="collage-img collage-detail">
                     <img src={pics.detail} alt="Close up of game art" />
                 </div>
             </div>

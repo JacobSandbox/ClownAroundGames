@@ -1,10 +1,10 @@
-import React from "react";
 import Homepage from "./Homepage";
 import Gamepage from "./Gamepage";
 import Librarypage from "./Librarypage";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./NotFound";
-import ResetScroll from "./ResetScroll";
+// import ResetScroll from "./ResetScroll";
+import "./styles/App.css";
 
 var data = 
 {
@@ -34,18 +34,34 @@ var data =
     link: "/..."
 }
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Homepage />
+    },
+    {
+        path: "games",
+        element: <Librarypage />
+    },
+    {
+        path: "detail/:name",
+        element: <Gamepage gameData={JSON.stringify(data)} />
+    },
+    {
+        path: "*",
+        element: <NotFound />
+    }
+]);
+
+                // <Routes>
+                //     <Route index         element={<Homepage />} />
+                //     <Route path="games"  element={<Librarypage />} />
+                //     <Route path="detail" element={<Gamepage gameData={JSON.stringify(data)} />} />
+                //     <Route path="*"      element={<NotFound />} />
+                // </Routes>
+
 function App() {
-        return (
-            <BrowserRouter>
-                <ResetScroll />
-                <Routes>
-                    <Route index element={<Homepage />} />
-                    <Route path="games" element={<Librarypage />} />
-                    <Route path="detail"   element={<Gamepage gameData={JSON.stringify(data)} />} />
-                    <Route path="*"       element={<NotFound />} />
-                </Routes>
-            </BrowserRouter>
-        );
-      }
+    return <RouterProvider router={router} />;
+}
 
 export default App;

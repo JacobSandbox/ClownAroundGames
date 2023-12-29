@@ -23,8 +23,8 @@ function Librarypage() {
             <div className="library-content global-content-box">
                 <div className="library-controls">-
                     <span>
-                        <label className="library-label" for="library-type">Type</label>
-                        <select className="library-select-type" name="library-type">
+                        <label className="library-label" htmlFor="library-type">Type</label>
+                        <select className="library-select-type" id="library-type">
                             <option value="any">Any</option>
                             <option value="card">Card game</option>
                             <option value="dice">Dice game</option>
@@ -33,8 +33,8 @@ function Librarypage() {
                     </span>
 
                     <span>
-                        <label className="library-label" for="library-genre">Genre</label>
-                        <select className="library-select-genre" name="library-genre">
+                        <label className="library-label" htmlFor="library-genre">Genre</label>
+                        <select className="library-select-genre" id="library-genre">
                             <option value="any">Any</option>
                             <option value="fantasy">Fantasy</option>
                             <option value="strategy">Strategy</option>
@@ -43,8 +43,8 @@ function Librarypage() {
                     </span>
 
                     <span>
-                        <label className="library-label" for="library-players">Players</label>
-                        <select className="library-select-players" name="library-players">
+                        <label className="library-label" htmlFor="library-players">Players</label>
+                        <select className="library-select-players" id="library-players">
                             <option value="any">Any</option>
                             <option value="1-4">1-4</option>
                             <option value="2-4">2-4</option>
@@ -53,8 +53,8 @@ function Librarypage() {
                     </span>
 
                     <span>
-                        <label className="library-label" for="library-time">Time</label>
-                        <select className="library-select-time" name="library-time">
+                        <label className="library-label" htmlFor="library-time">Time</label>
+                        <select className="library-select-time" id="library-time">
                             <option value="any">Any</option>
                             <option value="short">Under 15 mins</option>
                             <option value="average">15-30 mins</option>

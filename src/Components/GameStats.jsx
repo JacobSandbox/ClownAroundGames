@@ -12,28 +12,28 @@ import "./styles/GameStats.css";
 
 function GameStats ( props ) {
     return (
-        <div class="game-stats-container">
+        <div className="game-stats-container">
 
-            <p class="game-stats-title"> text text </p>
+            <p className="game-stats-title"> text text </p>
 
-            <div class="game-stats-label game-stats-number">
+            <div className="game-stats-label game-stats-number">
                 <p>{props.meta.players}</p>
             </div>
 
-            <div class="game-stats-label game-stats-time">
+            <div className="game-stats-label game-stats-time">
                 <p>{props.meta.time}'</p>
             </div>
 
-            <div class="game-stats-label game-stats-genre">
+            <div className="game-stats-label game-stats-genre">
                 <p>{props.meta.genre}</p>
             </div>
 
             <div className="game-stats-icon"></div>
 
-            <div class="game-stats-purchase-container">
-                <div class="game-stats-purchase">
+            <div className="game-stats-purchase-container">
+                <a href="http://www.thegamecrafter.com"><div className="game-stats-purchase">
                     <p>Buy at </p>
-                </div>
+                </div></a>
             </div>
         </div>
     );
