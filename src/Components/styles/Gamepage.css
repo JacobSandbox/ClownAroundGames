@@ -12,6 +12,8 @@ body {
     margin: 4rem auto 2rem auto;
 
     opacity: 0;
+
+    animation: gamepage-fade-in 150ms linear forwards;
 }
 
 @keyframes gamepage-fade-in {

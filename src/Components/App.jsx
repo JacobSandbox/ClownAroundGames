@@ -1,7 +1,7 @@
 import Homepage from "./Homepage";
 import Gamepage from "./Gamepage";
 import Librarypage from "./Librarypage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./NotFound";
 // import ResetScroll from "./ResetScroll";
 import "./styles/App.css";
@@ -34,7 +34,7 @@ var data =
     link: "/..."
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Homepage />
