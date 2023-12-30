@@ -58,6 +58,14 @@ function Gamepage(props) {
     //     });
     // },[]);
 
+    // useEffect(()=>{
+    //     fetch("https://raw.githubusercontent.com/JacobSandbox/resume/main/index.html?token=GHSAT0AAAAAACLY3ZE6NYLRCBNKBVZTRIPKZMP2OEQ").then( r => {
+    //         r.text().then( t => {
+    //             console.log(t);
+    //         })
+    //     });
+    // });
+
     
     if (dbInfo === null) {
         dbInfo = {id:0,title:"MISSING",genre:"NOGENRE",playTime:"S",players:"0-0"};
