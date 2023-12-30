@@ -47,16 +47,16 @@ function Gamepage(props) {
 
     let dbInfo = null;
 
-    useEffect(() => {
-        fetch("http://localhost:3001").then( response => {
-            dbInfo = response.json().then( final => {
-                setInfo({title: final[0].title});
-                document.getElementsByClassName("gamepage-body")[0].style.opacity = 1;
-            });
-        }).catch(() => {
-            console.log("failure");
-        });
-    },[]);
+    // useEffect(() => {
+    //     fetch("http://localhost:3001").then( response => {
+    //         dbInfo = response.json().then( final => {
+    //             setInfo({title: final[0].title});
+    //             document.getElementsByClassName("gamepage-body")[0].style.opacity = 1;
+    //         });
+    //     }).catch(() => {
+    //         console.log("failure");
+    //     });
+    // },[]);
 
     
     if (dbInfo === null) {
