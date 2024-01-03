@@ -6,9 +6,9 @@ import Footer from "./Footer";
 import "./styles/Homepage.css";
 
 let items = [
-    {id:0,imgUrl:"./images/elephant.jpg",alt:"one"},
-    {id:1,imgUrl:"./images/red_tent.jpg",alt:"two"},
-    {id:2,imgUrl:"./images/blue_tent.jpg",alt:"three"}
+    {id:0, imgUrl:"./images/elephant.jpg", alt:"one"},
+    {id:1, imgUrl:"./images/red_tent.jpg", alt:"two"},
+    {id:2, imgUrl:"./images/blue_tent.jpg", alt:"three"}
 ]
 
 function Homepage() {
