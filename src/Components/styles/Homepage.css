@@ -17,7 +17,7 @@
     width: 189px;
     height: 100%;
 
-    background-image: url("../../../public/images/curtain.png");
+    background-image: url("../images/curtain.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
