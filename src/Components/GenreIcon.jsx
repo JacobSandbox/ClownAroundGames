@@ -1,0 +1,25 @@
+// Genre icon component
+import actionIcon from "./images/action_icon.png";
+import strategyIcon from "./images/strategy_icon.png";
+import fantasyIcon from "./images/fantasy_icon.png";
+import coopIcon from "./images/co-op_icon.png";
+import horrorIcon from "./images/horror_icon.png";
+import "./styles/GenreIcon.css";
+
+const icons = {
+    action: actionIcon,
+    strategy: strategyIcon,
+    fantasy: fantasyIcon,
+    coop: coopIcon,
+    horror: horrorIcon
+};
+
+function GenreIcon ( props ) {
+    return (
+        <div className="genre-icon">
+            <img className="genre-icon-image" src={(props.genre !== undefined) ? icons[props.genre] : null} title={props.genre}  alt={`${props.genre} game`} />
+        </div>
+    );
+}
+
+export default GenreIcon;

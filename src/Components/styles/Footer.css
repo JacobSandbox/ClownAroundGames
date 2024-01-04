@@ -11,7 +11,7 @@
     font-size: 0.75rem;
     text-align: center;
 
-    background-color: yellowgreen;
+    background-color: var(--color-primary);
 
     overflow: hidden;
 }

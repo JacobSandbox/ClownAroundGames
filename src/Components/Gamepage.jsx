@@ -5,107 +5,74 @@ import GameStats from "./GameStats";
 import Header from "./Header";
 import Footer from "./Footer";
 import ImageCollage from "./ImageCollage";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./styles/Gamepage.css"
 
 var imageData = '{"setup":"https://picsum.photos/400","zoom":"https://picsum.photos/300","action":"https://picsum.photos/200","detail":"https://picsum.photos/100"}';
-// var imageData = '{"setup":"","zoom":"","action":"","detail":""}';
 
-// Props format
-/*
-{
-    "photos" : {
-        "path" : string ('./path/name... etc'  4 photos named 'setup.png', 'zoom.png', 'action.png', 'detail.png')
-    },
+const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/games/";
+const assetURL = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/assets/";
 
-    "title" : string,
 
-    "metadata" : {
-        "players" : string,
-        "time" : number,
-        "genre" : string
-    },
+var gameData = null;
 
-    "content" : {
-        "description" : string,
-        "documents" : [string]
-    },
-
-    "credits" : {
-        "design" : string,
-        "art" : string,
-        "year" : number
-    }
-}
-*/
-
-function Gamepage(props) {
+function Gamepage ( props ) {
 
     // Use state
-    const [usInfo, setInfo] = useState({title:"MISSINGBASE"});
+    const [hasData, setHasData] = useState(false);
 
-    let dbInfo = null;
+    // URL params
+    const { gameId } = useParams();
+    console.log("id == ", gameId);
 
-    // useEffect(() => {
-    //     fetch("http://localhost:3001").then( response => {
-    //         dbInfo = response.json().then( final => {
-    //             setInfo({title: final[0].title});
-    //             document.getElementsByClassName("gamepage-body")[0].style.opacity = 1;
-    //         });
-    //     }).catch(() => {
-    //         console.log("failure");
-    //     });
-    // },[]);
-
-    // useEffect(()=>{
-    //     fetch("https://raw.githubusercontent.com/JacobSandbox/resume/main/index.html?token=GHSAT0AAAAAACLY3ZE6NYLRCBNKBVZTRIPKZMP2OEQ").then( r => {
-    //         r.text().then( t => {
-    //             console.log(t);
-    //         })
-    //     });
-    // });
-
-    
-    if (dbInfo === null) {
-        dbInfo = {id:0,title:"MISSING",genre:"NOGENRE",playTime:"S",players:"0-0"};
-    }
-
-    // url params test
-    // const { name } = useParams();
-
-    // Parse JSON game data
-    if ( props.gameData === undefined ) return <h1>ERROR: NO GAME DATA SUPPLIED</h1>
-    let info = JSON.parse(props.gameData);
-    let desc = info.content.description.split(" ");
+    // Effect
+    useEffect( () => {
+        // Fetch game data
+        fetch( dataURL + gameId + ".json" )
+        .then( response => {
+            // Parse JSON from data
+            response.json()
+            .then ( result => {
+                // Store data and set flag
+                gameData = result;
+                console.log(gameData.description.split(" ", 1));
+                setHasData(true);
+            });
+        });
+    });
 
     // Generate page from data
     return (
         <div className="gamepage-root">
             <Header menuItems={["Games", "Home", "About", "Contact"]} />
-            <div className="gamepage-body global-content-box">
-                <h1 className="gamepage-title">{usInfo.title}</h1>
-                <div className="gamepage-top">
-                    <ImageCollage imageData={imageData} />
-                    <GameStats meta={info.metadata} />
-                </div>
-                <div className="gamepage-bottom">
-                    <p className="gamepage-headline">{desc[0]}</p>
-                    <p className="gamepage-content">{desc.slice(1, -1).join(" ")}</p>
-                    <div> <br /> DOCUMENTS <hr /> links...</div>
-                    <div className="gamepage-credits">
-                        CREDITS
-                        <br />
-                        <hr />
-                        {
-                            (info.credits.design === info.credits.art) ?
-                                <p>Art and Design by {info.credits.design}</p> :
-                                <p>Game Design by {info.credits.design}<br /> Art by {info.credits.art}</p>
-                        }
-                        Released {info.credits.year}
+            {(hasData === true) ? 
+                <div className="gamepage-body global-content-box">
+                    <h1 className="gamepage-title">{gameData.title}</h1>
+                    <div className="gamepage-top">
+                        <ImageCollage imageData={imageData} />
+                        <GameStats meta={{genres:gameData.genres, players:gameData.players, duration:gameData.duration}} genres={gameData.genres} />
+                    </div>
+                    <div className="gamepage-bottom">
+                        <p className="gamepage-headline">{gameData.description.slice(0, gameData.description.indexOf(" "))}</p>
+                        <p className="gamepage-content">{gameData.description.slice(gameData.description.indexOf(" "))}</p>
+                        <div> <br /> DOCUMENTS <hr /> links...</div>
+                        <div className="gamepage-credits">
+                            CREDITS
+                            <br />
+                            <hr />
+                            {
+                                (gameData.credits.design === gameData.credits.art) ?
+                                    <p>Art and Design by {gameData.credits.design}</p> :
+                                    <p>Design by {gameData.credits.design}<br /> Art by {gameData.credits.art}</p>
+                            }
+                            Released {gameData.credits.release}
+                        </div>
                     </div>
                 </div>
-            </div>
+                :
+                <div className="global-loading">?</div>
+            }
             <Footer />
         </div>
     );

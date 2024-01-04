@@ -13,17 +13,31 @@
     grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
     gap: var(--spacing);
 
-    background: skyblue;
-    /* border-radius: var(--spacing); */
+    /* background: linear-gradient(-45deg, var(--color-accent) 50%, transparent 51% 64%, var(--color-accent) 65% 72%, transparent 73% 79%, var(--color-accent) 80% 85%, transparent 86%); */
+    border-radius: min(1.5vw, 1em);
 }
 
-.game-stats-title {
+.game-stats-container::before {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    /* background-image: linear-gradient(0deg, var(--color-accent) 40%, transparent 40% 46.5%, var(--color-accent) 46.5% 59%, transparent 59% 71%, var(--color-accent) 71% 79.3%, transparent 79.3% 95.8%, var(--color-accent) 95.8%); */
+    background-image: linear-gradient(0deg, var(--color-accent) 35%, transparent 35% 43%, var(--color-accent) 43% 58%, transparent 58% 68%, var(--color-accent) 68% 70%, transparent 70%);
+    /* background-color: var(--color-accent); */
+    border-radius: min(1.5vw, 1em);
+}
+
+.game-stats-genres {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 
     grid-column: span 3;
-
-    font-size: min(4vw,46px);
-    text-align: center;
 }
 
 .game-stats-label {
@@ -36,8 +50,6 @@
     inset: 0 0 0 0;
 
     font-size: min(2.6vw, 30px);
-
-    background-color: red;
 
     overflow: hidden;
 }
@@ -65,6 +77,16 @@
 .game-stats-icon > img {
     width: 100%;
     height: 100%;
+}
+
+.game-stats-players {
+    grid-column: span 2;
+
+    font-size: min(1.75vw, 20px);
+}
+
+.game-stats-duration {
+    font-size: min(3vw, 35px);
 }
 
 /*
@@ -128,6 +150,7 @@
 
 .game-stats-purchase::before {
     content: "";
+    
     position: absolute;
     top: 0.25rem;
     left: 0.25rem;
@@ -147,12 +170,14 @@
 
 .game-stats-purchase::after {
     content: "";
-    background-image: url("../images/GC_logo.png");
-    background-size: cover;
+    
     position: absolute;
     inset: 15% 15% auto auto;
     height: 70%;
     aspect-ratio: 1;
     z-index: 3;
+
+    background-image: url("../images/GC_logo.png");
+    background-size: cover;
     border-radius: 50%;
 }

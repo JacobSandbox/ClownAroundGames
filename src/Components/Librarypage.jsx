@@ -1,9 +1,13 @@
 // Game library browser page
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "./Header";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
 import "./styles/Librarypage.css";
+
+// Database urls
+const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/games.json";
+const assetURL = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/assets/";
 
 // Filter functions
 function sortLibrary ( items, func ) {
@@ -14,8 +18,25 @@ function sortLibrary ( items, func ) {
     let cards = document.getElementsByClassName("game-card");
 }
 
+var libraryData = null;
+
 function Librarypage() {
     let metadata = {type:"board",genre:"fantasy",players:"2-4",time:"short"};
+
+    var [hasData, setHasData] = useState(false);
+
+    // Fetch game library info from database
+    useEffect( () => {
+        fetch(dataURL)
+        .then( response => {
+            response.json().then( result => {
+                libraryData = result;
+                setHasData(true);
+            });
+        }).catch( () => {
+            throw new TypeError("Response is null...");
+        });
+    }, []);
 
     return (
         <div className="library-root">
@@ -65,16 +86,9 @@ function Librarypage() {
                 </div>
 
                 <div className="library-browser">
-                    <GameCard boxart="https://picsum.photos/200" gameTitle="test game test" shoutText="WHAAATT!??!?!" genre="https://picsum.photos/100"/>
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
+                    {(hasData === true) ? libraryData.map( game => {
+                        return <GameCard key={game.id} databaseId={game.databaseId} boxart={assetURL+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />
+                    })  : <div className="global-loading">?</div>}
                 </div>
             </div>
             <Footer />

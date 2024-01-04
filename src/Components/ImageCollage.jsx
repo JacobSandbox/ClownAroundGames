@@ -8,7 +8,7 @@ function ImageCollage ( props ) {
         pics = JSON.parse(props.imageData);
     
     return (
-        <div className="collage-container">
+        <div className="collage-container" onLoad={()=>{console.log("loaded collage....");}}>
             <div className="collage-img collage-setup">
                 <img src={pics.setup} alt="Game setup" />
             </div>

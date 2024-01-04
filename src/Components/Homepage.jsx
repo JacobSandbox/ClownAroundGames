@@ -20,7 +20,7 @@ function Homepage() {
             <div className="homepage-curtain"></div>
             </div>
             <Carousel items={JSON.stringify(items)} itemCount="3" size="400" />
-            <h2 style={{fontSize:"3rem"}}>Apologies! Site is under constrution! Come back soon!</h2>
+            <h2 style={{fontSize:"2rem"}}>Apologies! Site is under constrution! Come back soon!</h2>
         </div>
         <Footer />
     </div>);

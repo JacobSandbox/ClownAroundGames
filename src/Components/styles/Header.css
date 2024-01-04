@@ -7,7 +7,7 @@
     padding: 0.5rem 1rem;
     z-index: 1000;
 
-    background-color: yellowgreen;
+    background-color: var(--color-primary);
 
     overflow: visible;
     
@@ -18,7 +18,7 @@
     flex: 1fr;
     
     text-align: left;
-    font-family: "Alice", serif;
+    font-family: var(--font-primary);
     font-size: 1.75rem;
 }
 

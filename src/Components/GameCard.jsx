@@ -1,18 +1,20 @@
 // Card for displaying library items
+import GenreIcon from "./GenreIcon";
 import { Link } from "react-router-dom";
 import "./styles/GameCard.css";
 
 function GameCard ( props ) {
+    console.log(props.databaseId);
     return (
-        <Link to="/detail/name"> <div className="game-card">
+        <Link to={`/detail/${props.databaseId}`}> <div className="game-card">
             <div className="game-card-image">
                 <img src={props.boxart} alt="Box art" />
             </div>
             <div className="game-card-body"></div>
             <div className="game-card-title">
-                <p>{props.gameTitle}</p>
+                <p>{props.title}</p>
             </div>
-            <div className="game-card-icon" style={(props.genre !== undefined) ? {backgroundImage:`url(${props.genre})`} : {}}></div>
+            <GenreIcon genre={props.genre}/>
             <div className="game-card-shout">
                 <p>{props.shoutText}</p>
             </div>

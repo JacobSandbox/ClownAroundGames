@@ -1,0 +1,28 @@
+/* Stylesheet for genre icons */
+
+.genre-icon {
+    margin: auto;
+
+    max-width: 5rem;
+
+    /* background-color: lightgray; */
+    background-image: radial-gradient(white 60%, lightgrey 62%);
+    border-radius: 50%;
+
+    overflow: clip;
+}
+
+.genre-icon-image {
+    display: block;
+
+    width: 80%;
+    height: 80%;
+
+    aspect-ratio: 1;
+
+    margin: 10%;
+
+    opacity: 0.6;
+
+    object-fit: contain;
+}

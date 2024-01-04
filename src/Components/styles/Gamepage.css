@@ -1,7 +1,7 @@
 /* Stylesheet for game info display page */
 
 body {
-    background-color: white;
+    background-color: var(--color-background);
 }
 
 .gamepage-root {
@@ -74,7 +74,7 @@ body {
 
     position: relative;
 
-    background-color: lightgray;
+    /* background-color: lightgray; */
 }
 
 .gamepage-bottom {
@@ -82,10 +82,7 @@ body {
 
     /* background-color: cadetblue; */
 
-    font-family: 'Alice', serif;
-/* font-family: 'Rubik Mono One', monospace; */
-/* font-family: 'Spline Sans Mono', monospace; */
-/* font-family: 'Yeseva One', serif; */
+    font-family: var(--font-primary);
 }
 
 .gamepage-headline {
@@ -94,6 +91,7 @@ body {
     padding: 0 0.5rem 0 0;
     position: relative;
 
+    font-family: var(--font-primary);
     font-size: 3rem;
 }
 

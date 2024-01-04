@@ -15,7 +15,7 @@ var data =
     title : "Test Title",
 
     metadata : {
-        players : "2-4",
+        players : "2-4 players",
         time : 15,
         genre : "strategy"
     },
@@ -44,7 +44,7 @@ const router = createHashRouter([
         element: <Librarypage />
     },
     {
-        path: "detail/:name",
+        path: "detail/:gameId",
         element: <Gamepage gameData={JSON.stringify(data)} />
     },
     {

@@ -7,6 +7,19 @@ font-family: 'Spline Sans Mono', monospace;
 font-family: 'Yeseva One', serif;
 */
 
+/* Global properties */
+:root {
+    /* FONTS */
+    --font-primary: 'Alice', serif;
+    --font-secondary: 'Rubik Mono One', monospace;
+
+    /* COLORS */
+    --color-primary: yellowgreen;
+    --color-accent: #985BFE;
+    --color-neutral: lightgray;
+    --color-background: white;
+}
+
 /* reset */
 img {
     font-style: italic;
@@ -25,7 +38,7 @@ body {
     position: relative;
     margin: 0;
 
-    font-family: "Rubik Mono One", monospace;
+    font-family: var(--font-secondary);
 }
 
 a, a:active, a:visited {
@@ -38,4 +51,26 @@ a, a:active, a:visited {
 /* class */
 .global-content-box {
     width: min(calc(100% - 4rem),1080px);
+}
+
+.global-loading {
+    margin: 0 auto;
+
+    color: lightgray;
+    text-align: center;
+    font-size: 5rem;
+
+    rotate: -10deg;
+
+    animation: global-loading-wiggle 500ms ease-in-out alternate infinite;
+}
+
+@keyframes global-loading-wiggle {
+    from {
+        rotate: -10deg;
+    }
+
+    to {
+        rotate: 10deg;
+    }
 }
