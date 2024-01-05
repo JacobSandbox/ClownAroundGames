@@ -15,7 +15,7 @@ function Carousel ( props ) {
 
     return <div className="carousel">
         <Reel items={props.items} slide={slide} gap="500" size={size} />
-        <ReelController steps={props.itemCount} hook={setSlide} />
+        <ReelController steps={props.itemCount} hook={setSlide} interval="4" />
     </div>;
 }
 

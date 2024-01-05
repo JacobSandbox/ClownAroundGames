@@ -26,6 +26,8 @@ function Gamepage ( props ) {
     const { gameId } = useParams();
     console.log("id == ", gameId);
 
+    let images
+
     // Effect
     useEffect( () => {
         // Fetch game data
@@ -36,7 +38,6 @@ function Gamepage ( props ) {
             .then ( result => {
                 // Store data and set flag
                 gameData = result;
-                console.log(gameData.description.split(" ", 1));
                 setHasData(true);
             });
         });
@@ -50,7 +51,12 @@ function Gamepage ( props ) {
                 <div className="gamepage-body global-content-box">
                     <h1 className="gamepage-title">{gameData.title}</h1>
                     <div className="gamepage-top">
-                        <ImageCollage imageData={imageData} />
+                        <ImageCollage imageData={{
+                                            setup:assetURL+gameData.images.setup,
+                                            zoom:assetURL+gameData.images.zoom,
+                                            action:assetURL+gameData.images.action,
+                                            detail:assetURL+gameData.images.detail
+                                            }} />
                         <GameStats meta={{genres:gameData.genres, players:gameData.players, duration:gameData.duration}} genres={gameData.genres} />
                     </div>
                     <div className="gamepage-bottom">

@@ -21,7 +21,14 @@ font-family: 'Yeseva One', serif;
 }
 
 /* reset */
+
+/* tags */
+
 img {
+    display: block;
+
+    max-width: 100%;
+
     font-style: italic;
 }
 
@@ -29,7 +36,6 @@ p {
     margin: 0;
 }
 
-/* tags */
 html {
     scroll-behavior: smooth;
 }

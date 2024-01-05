@@ -5,7 +5,7 @@ import "./styles/ImageCollage.css";
 function ImageCollage ( props ) {
     let pics = {setup:"",zoom:"",action:"",detail:""};
     if (props.imageData !== undefined)
-        pics = JSON.parse(props.imageData);
+        pics = props.imageData;
     
     return (
         <div className="collage-container" onLoad={()=>{console.log("loaded collage....");}}>

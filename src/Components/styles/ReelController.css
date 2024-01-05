@@ -69,6 +69,8 @@
 }
 
 .reel-control-progress-bar {
+    --bar-progress: -100%;
+
     position: absolute;
     left: 0;
     width: 50%;
@@ -81,26 +83,26 @@
 
     overflow: clip;
 
-    transition: left 0.25s;
+    transition: left 250ms, var(--bar-progress) 100ms;
 }
 
 .reel-control-progress-bar::before {
     content: "";
 
     position: absolute;
-    width: 105%;
+    width: 100%;
     height: 100%;
-    left: -105%;
+    left: var(--bar-progress);
 
     background-color: #333;
 
-    animation: reel-control-fillup 0s linear infinite;
-    animation-duration: inherit;
+    /* animation: reel-control-fillup 0s linear infinite;
+    animation-duration: inherit; */
 }
 
 @keyframes reel-control-fillup {
     0% {
-        left: -105%;
+        left: -100%;
     }
     100% {
         left: 0;

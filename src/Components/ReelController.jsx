@@ -3,14 +3,14 @@ import "./styles/ReelController.css";
 
 function ReelController ( props ) {
     const [progress, setProgress] = React.useState(0);
+    const [barSpeed, setBarSpeed] = React.useState(0);
+    const [barProgress, setBarProgress] = React.useState(0);
 
     function handleClick ( dir ) {
         // Reset animation of progress bar
-        // console.log("click");
-        // let bar = document.getElementsByClassName("reel-control-progress-bar")[0];
-        // console.log(bar);
-        // bar.style.animationDuration = "none";
-        // bar.style.animationDuration = "";
+        let bar = document.querySelectorAll(".reel-control-progress-bar")[0];
+        setBarProgress(0);
+        bar.style.setProperty("--bar-progress", 0);
         // Change progress variable
         changeProgress(dir)
     }
@@ -24,10 +24,24 @@ function ReelController ( props ) {
         props.hook(newPro);
     }
 
+    function intervalStep() {
+        // Syncronize controls to timer
+        setBarProgress(barProgress + barSpeed);
+
+        let bar = document.querySelectorAll(".reel-control-progress-bar")[0];
+        bar.style.setProperty("--bar-progress",(-100 + barProgress) + "%");
+
+        if ( barProgress >= 100 ) {
+            setBarProgress(0);
+            changeProgress(1);
+        }
+    }
+
     React.useEffect(()=> {
         // Start timer to automatically change to next slide
         if ( props.interval !== undefined ) {
-            const ID = setInterval(()=>{changeProgress(1)}, parseInt(props.interval)*1000);
+            const ID = setInterval(intervalStep, 10);
+            setBarSpeed(1 / parseInt(props.interval));
             return ()=>{clearInterval(ID);};
         }
     });
