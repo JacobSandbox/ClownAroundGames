@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ClownAroundGames/static/css/main.db06798b.css",
-    "main.js": "/ClownAroundGames/static/js/main.472dc289.js",
+    "main.css": "/ClownAroundGames/static/css/main.555cbd02.css",
+    "main.js": "/ClownAroundGames/static/js/main.086965cb.js",
     "static/media/curtain.png": "/ClownAroundGames/static/media/curtain.35530727a3d652856dcf.png",
     "static/media/GC_logo.png": "/ClownAroundGames/static/media/GC_logo.6a322a76e3f2bd212709.png",
     "index.html": "/ClownAroundGames/index.html",
-    "main.db06798b.css.map": "/ClownAroundGames/static/css/main.db06798b.css.map",
-    "main.472dc289.js.map": "/ClownAroundGames/static/js/main.472dc289.js.map"
+    "main.555cbd02.css.map": "/ClownAroundGames/static/css/main.555cbd02.css.map",
+    "main.086965cb.js.map": "/ClownAroundGames/static/js/main.086965cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.db06798b.css",
-    "static/js/main.472dc289.js"
+    "static/css/main.555cbd02.css",
+    "static/js/main.086965cb.js"
   ]
 }
