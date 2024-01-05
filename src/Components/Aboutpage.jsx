@@ -7,7 +7,7 @@ import "./styles/Aboutpage.css"
 function Aboutpage() {
     return (
         <div className="aboutpage-root">
-            <Header menuItems={["Games", "Home", "Contact"]}/>
+            <Header menuItems={["Games", "Home", "$About", "Contact"]}/>
             <div className="aboutpage-content global-content-box">
                 <h1>About</h1>
                 <p>about the studio on stuff... aardvarks are the first animal listed in all dictionaries</p>

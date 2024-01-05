@@ -5,11 +5,9 @@ import GameStats from "./GameStats";
 import Header from "./Header";
 import Footer from "./Footer";
 import ImageCollage from "./ImageCollage";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./styles/Gamepage.css"
-
-var imageData = '{"setup":"https://picsum.photos/400","zoom":"https://picsum.photos/300","action":"https://picsum.photos/200","detail":"https://picsum.photos/100"}';
 
 const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/games/";
 
@@ -86,6 +84,9 @@ function Gamepage ( props ) {
                                     <p>Design by {gameData.credits.design}<br /> Art by {gameData.credits.art}</p>
                             }
                             Released {gameData.credits.release}
+                        </div>
+                        <div className="gamepage-contact-us">
+                            <Link to="/contact">Wanna sell our games in your store? Contact us!</Link>
                         </div>
                     </div>
                 </div>

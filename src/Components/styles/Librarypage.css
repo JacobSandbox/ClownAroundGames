@@ -15,6 +15,7 @@
 .library-controls {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     padding: 1rem 0;
 
@@ -25,6 +26,14 @@
     font-style: italic;
 
     margin-right: 0.5rem;
+}
+
+.library-filter-btn {
+    padding: 0.75rem 1rem;
+
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 50%;
 }
 
 .library-browser {

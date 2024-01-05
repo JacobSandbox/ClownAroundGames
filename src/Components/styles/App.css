@@ -52,6 +52,10 @@ a, a:active, a:visited {
     color: black;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* id */
 
 /* class */

@@ -42,7 +42,7 @@ const router = createHashRouter([
         element: <Homepage />
     },
     {
-        path: "games",
+        path: "games/:filter",
         element: <Librarypage />
     },
     {

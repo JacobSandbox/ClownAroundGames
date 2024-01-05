@@ -1,7 +1,7 @@
 /* Stylesheet for menu widget */
 
 :root {
-    --menu-height: 7.25rem;
+    --menu-height: 8.65rem;
 }
 
 .menu-container {
@@ -106,4 +106,20 @@ a:first-child > .menu-item {
     width: 30px;
     height: 30px;
     background-color: red;
+}
+
+.menu-current {
+    position: relative;
+
+    display: block;
+    margin: 0.5rem;
+    
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 0.75rem;
+
+    z-index: 1;
+}
+
+.menu-current:first-child{
+    font-size: 1rem;
 }

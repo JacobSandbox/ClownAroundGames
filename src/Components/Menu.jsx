@@ -14,6 +14,8 @@ function Menu ( props ) {
                 {props.items.map(item => {
                     let location = `/${item.toLowerCase()}`;
                     if ( location === "/home" ) location = "/";
+                    if ( location === "/games" ) location = "/games/all";
+                    if ( item.charAt(0) === "$" ) return <p className="menu-current">{`-${item.slice(1)}-`}</p>
                     return <Link key={props.items.indexOf(item)} to={location}><button className="menu-item">{item}</button></Link>
                 })}
                 <p>Menu</p>

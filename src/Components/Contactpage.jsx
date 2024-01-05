@@ -6,7 +6,7 @@ import "./styles/Contactpage.css";
 function Contactpage() {
     return (
         <div>
-            <Header menuItems={["Games", "Home", "About"]} />
+            <Header menuItems={["Games", "Home", "About", "$Contact"]} />
             <div className="contactpage-body">
                 <h1>contact</h1>
             </div>

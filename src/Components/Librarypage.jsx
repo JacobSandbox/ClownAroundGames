@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
 import "./styles/Librarypage.css";
+import { useParams } from "react-router-dom";
 
 // Database urls
 const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/";
@@ -17,12 +18,17 @@ function sortLibrary ( items, func ) {
     let cards = document.getElementsByClassName("game-card");
 }
 
+function entryIsMatch ( entry, filter ) {
+    return true;
+}
+
 var libraryData = null;
 
 function Librarypage() {
-    let metadata = {type:"board",genre:"fantasy",players:"2-4",time:"short"};
-
+    // State
     var [hasData, setHasData] = useState(false);
+    // URL Params
+    var { filter } = useParams();
 
     // Fetch game library info from database
     useEffect( () => {
@@ -39,7 +45,7 @@ function Librarypage() {
 
     return (
         <div className="library-root">
-            <Header menuItems={["Home", "About", "Contact"]} />
+            <Header menuItems={["$Games", "Home", "About", "Contact"]} />
             <div className="library-content global-content-box">
                 <div className="library-controls">-
                     <span>
@@ -81,12 +87,17 @@ function Librarypage() {
                             <option value="long">Over 30 mins</option>
                         </select>
                     </span>
+                    <span>
+                        <button className="library-filter-btn">Filter</button>
+                    </span>
                     -
                 </div>
 
                 <div className="library-browser">
                     {(hasData === true) ? libraryData.map( game => {
-                        return <GameCard key={game.id} databaseId={game.databaseId} boxart={dataURL+"games/"+game.databaseId+"/"+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />
+                        if ( entryIsMatch(game, filter) || filter === "all" )
+                            {return <GameCard key={game.id} databaseId={game.databaseId} boxart={dataURL+"games/"+game.databaseId+"/"+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />}
+                        return null;
                     })  : <div className="global-loading">?</div>}
                 </div>
             </div>

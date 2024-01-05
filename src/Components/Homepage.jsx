@@ -13,14 +13,14 @@ let items = [
 
 function Homepage() {
     return (<div>
-        <Header menuItems={["Games", "About", "Contact"]}/>
+        <Header menuItems={["Games", "$Home", "About", "Contact"]}/>
         <div className="homepage-content global-content-box">
             <div className="homepage-curtain-container">
             <div className="homepage-curtain"></div>
             <div className="homepage-curtain"></div>
             </div>
             <Carousel items={JSON.stringify(items)} itemCount="3" size="400" />
-            <h2 style={{fontSize:"2rem"}}>Apologies! Site is under constrution! Come back soon!</h2>
+            <h2 style={{fontSize:"2rem"}}>Apologies! Site is under construction! Come back soon!</h2>
         </div>
         <Footer />
     </div>);

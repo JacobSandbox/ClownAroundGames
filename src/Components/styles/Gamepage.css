@@ -109,3 +109,12 @@ body {
 
     margin: 1rem 0;
 }
+
+.gamepage-contact-us {
+    width: 100%;
+
+    font-size: 0.9rem;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: right;
+}
