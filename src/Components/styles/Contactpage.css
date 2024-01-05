@@ -1,0 +1,6 @@
+/* Stylesheet for contact info page */
+
+.contactpage-body {
+    display: flex;
+    justify-content: center;
+}

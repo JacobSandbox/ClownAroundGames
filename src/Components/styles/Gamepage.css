@@ -100,6 +100,10 @@ body {
     text-indent: 5rem;
 }
 
+.gamepage-downloads {
+    text-decoration: underline;
+}
+
 .gamepage-credits {
     font-style: italic;
 

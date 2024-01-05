@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./styles/GameCard.css";
 
 function GameCard ( props ) {
-    console.log(props.databaseId);
     return (
         <Link to={`/detail/${props.databaseId}`}> <div className="game-card">
             <div className="game-card-image">

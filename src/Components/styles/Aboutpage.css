@@ -1,0 +1,10 @@
+/* Stylesheet for about page */
+.aboutpage-root {
+    position: relative;
+}
+
+.aboutpage-content {
+    margin: 4rem auto 2rem auto;
+
+    font-family: var(--font-primary);
+}

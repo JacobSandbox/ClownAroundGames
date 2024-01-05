@@ -6,8 +6,7 @@ import GameCard from "./GameCard";
 import "./styles/Librarypage.css";
 
 // Database urls
-const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/games.json";
-const assetURL = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/assets/";
+const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/";
 
 // Filter functions
 function sortLibrary ( items, func ) {
@@ -27,7 +26,7 @@ function Librarypage() {
 
     // Fetch game library info from database
     useEffect( () => {
-        fetch(dataURL)
+        fetch(dataURL+"games.json")
         .then( response => {
             response.json().then( result => {
                 libraryData = result;
@@ -87,7 +86,7 @@ function Librarypage() {
 
                 <div className="library-browser">
                     {(hasData === true) ? libraryData.map( game => {
-                        return <GameCard key={game.id} databaseId={game.databaseId} boxart={assetURL+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />
+                        return <GameCard key={game.id} databaseId={game.databaseId} boxart={dataURL+"games/"+game.databaseId+"/"+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />
                     })  : <div className="global-loading">?</div>}
                 </div>
             </div>

@@ -4,6 +4,8 @@ import strategyIcon from "./images/strategy_icon.png";
 import fantasyIcon from "./images/fantasy_icon.png";
 import coopIcon from "./images/co-op_icon.png";
 import horrorIcon from "./images/horror_icon.png";
+import historicalIcon from "./images/historical_icon.png";
+import cardIcon from "./images/card_icon.png";
 import "./styles/GenreIcon.css";
 
 const icons = {
@@ -11,7 +13,9 @@ const icons = {
     strategy: strategyIcon,
     fantasy: fantasyIcon,
     coop: coopIcon,
-    horror: horrorIcon
+    horror: horrorIcon,
+    historical: historicalIcon,
+    card: cardIcon
 };
 
 function GenreIcon ( props ) {

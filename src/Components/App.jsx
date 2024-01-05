@@ -5,6 +5,8 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./NotFound";
 // import ResetScroll from "./ResetScroll";
 import "./styles/App.css";
+import Contactpage from "./Contactpage";
+import Aboutpage from "./Aboutpage";
 
 var data = 
 {
@@ -46,6 +48,14 @@ const router = createHashRouter([
     {
         path: "detail/:gameId",
         element: <Gamepage gameData={JSON.stringify(data)} />
+    },
+    {
+        path: "contact",
+        element: <Contactpage />
+    },
+    {
+        path: "about",
+        element: <Aboutpage />
     },
     {
         path: "*",

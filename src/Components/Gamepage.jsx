@@ -12,7 +12,6 @@ import "./styles/Gamepage.css"
 var imageData = '{"setup":"https://picsum.photos/400","zoom":"https://picsum.photos/300","action":"https://picsum.photos/200","detail":"https://picsum.photos/100"}';
 
 const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/games/";
-const assetURL = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/assets/";
 
 
 var gameData = null;
@@ -31,7 +30,7 @@ function Gamepage ( props ) {
     // Effect
     useEffect( () => {
         // Fetch game data
-        fetch( dataURL + gameId + ".json" )
+        fetch( dataURL + gameId + "/info.json" )
         .then( response => {
             // Parse JSON from data
             response.json()
@@ -52,17 +51,31 @@ function Gamepage ( props ) {
                     <h1 className="gamepage-title">{gameData.title}</h1>
                     <div className="gamepage-top">
                         <ImageCollage imageData={{
-                                            setup:assetURL+gameData.images.setup,
-                                            zoom:assetURL+gameData.images.zoom,
-                                            action:assetURL+gameData.images.action,
-                                            detail:assetURL+gameData.images.detail
-                                            }} />
-                        <GameStats meta={{genres:gameData.genres, players:gameData.players, duration:gameData.duration}} genres={gameData.genres} />
+                                            setup:`${dataURL+gameId}/${gameData.images.setup}`,
+                                            zoom:`${dataURL+gameId}/${gameData.images.zoom}`,
+                                            action:`${dataURL+gameId}/${gameData.images.action}`,
+                                            detail:`${dataURL+gameId}/${gameData.images.detail}`
+                                        }} />
+                        <GameStats players={gameData.players}
+                                   duration={gameData.duration}
+                                   genres={gameData.genres}
+                                   url={gameData.purchaseURL} />
                     </div>
                     <div className="gamepage-bottom">
                         <p className="gamepage-headline">{gameData.description.slice(0, gameData.description.indexOf(" "))}</p>
                         <p className="gamepage-content">{gameData.description.slice(gameData.description.indexOf(" "))}</p>
-                        <div> <br /> DOCUMENTS <hr /> links...</div>
+                        { 
+                            (gameData.documents !== "none") ?
+                            <div>
+                                <br />
+                                DOCUMENTS
+                                <hr />
+                                {gameData.documents.map(doc => {
+                                    return <a className="gamepage-downloads" href={dataURL+gameId+"/"+doc} download>{doc}</a>
+                                })}
+                            </div>
+                            : null
+                        }
                         <div className="gamepage-credits">
                             CREDITS
                             <br />
