@@ -7,4 +7,4 @@ Built by Jacob Salemi
 npm start
 
 ### Published
-view site at https://jacobsandbox.github.io/ClownAroundGames
+view site at www.clownaroundgames.com

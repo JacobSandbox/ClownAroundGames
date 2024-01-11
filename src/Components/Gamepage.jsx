@@ -5,6 +5,7 @@ import GameStats from "./GameStats";
 import Header from "./Header";
 import Footer from "./Footer";
 import ImageCollage from "./ImageCollage";
+import ResetScroll from "./ResetScroll";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./styles/Gamepage.css"
@@ -14,14 +15,13 @@ const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGame
 
 var gameData = null;
 
-function Gamepage ( props ) {
+function Gamepage() {
 
     // Use state
     const [hasData, setHasData] = useState(false);
 
     // URL params
     const { gameId } = useParams();
-    console.log("id == ", gameId);
 
     let images
 
@@ -43,6 +43,7 @@ function Gamepage ( props ) {
     // Generate page from data
     return (
         <div className="gamepage-root">
+        <ResetScroll />
             <Header menuItems={["Games", "Home", "About", "Contact"]} />
             {(hasData === true) ? 
                 <div className="gamepage-body global-content-box">
