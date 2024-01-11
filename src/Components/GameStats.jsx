@@ -23,7 +23,7 @@ function GameStats ( props ) {
             <div className="game-stats-icon"></div>
 
             <div className="game-stats-purchase-container">
-                <a href={props.url}><div className="game-stats-purchase">
+                <a href={props.url} target="_blank"><div className="game-stats-purchase">
                     <p>Buy at </p>
                 </div></a>
             </div>
