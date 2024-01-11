@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import Header from "./Header";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
+import { Link } from "react-router-dom";
 import "./styles/Librarypage.css";
 import { useParams } from "react-router-dom";
 
@@ -19,6 +20,10 @@ function sortLibrary ( items, func ) {
 }
 
 function entryIsMatch ( entry, filter ) {
+    let conditions = filter.split(".").map(con => {
+        return con.split("=");
+    });
+    console.log(conditions);
     return true;
 }
 
@@ -88,7 +93,7 @@ function Librarypage() {
                         </select>
                     </span>
                     <span>
-                        <button className="library-filter-btn">Filter</button>
+                        <Link to="/games/genre=historical"><button className="library-filter-btn">Filter</button></Link>
                     </span>
                     -
                 </div>

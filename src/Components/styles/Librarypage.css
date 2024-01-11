@@ -33,7 +33,17 @@
 
     background-color: var(--color-primary);
     border: none;
-    border-radius: 50%;
+    border-radius: 100% 20%;
+
+    transition: border-radius 250ms;
+}
+
+.library-filter-btn:hover {
+    border-radius: 20%;
+}
+
+.library-filter-btn:active {
+    background-color: var(--color-accent);
 }
 
 .library-browser {
