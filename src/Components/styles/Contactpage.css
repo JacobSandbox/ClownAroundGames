@@ -2,5 +2,33 @@
 
 .contactpage-body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    margin: 2rem;
+}
+
+.contactpage-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+
+    padding: 2rem;
+
+    box-sizing: border-box;
+
+    font-family: var(--font-primary);
+}
+
+a.contactpage-mailto {
+    font-size: 3rem;
+    
+    color: blue;
+    text-decoration: underline;
+
+    transition: color 500ms;
 }

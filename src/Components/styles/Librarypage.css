@@ -46,6 +46,11 @@
     background-color: var(--color-accent);
 }
 
+.library-clear-btn {
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
 .library-browser {
     display: flex;
     flex-direction: row;

@@ -18,25 +18,30 @@ var gameData = null;
 function Gamepage() {
 
     // Use state
-    const [hasData, setHasData] = useState(false);
+    const [dataStatus, setDataStatus] = useState(0);
 
     // URL params
     const { gameId } = useParams();
-
-    let images
 
     // Effect
     useEffect( () => {
         // Fetch game data
         fetch( dataURL + gameId + "/info.json" )
         .then( response => {
-            // Parse JSON from data
-            response.json()
-            .then ( result => {
-                // Store data and set flag
-                gameData = result;
-                setHasData(true);
-            });
+            // Check response status
+            if ( response.status !== 200 ) {
+                // Failed to fetch data
+                setDataStatus(2);
+            } else {
+                // Fetch success
+                // Parse JSON from data
+                response.json()
+                .then ( result => {
+                    // Store data and set flag
+                    gameData = result;
+                    setDataStatus(1);
+                });
+            }
         });
     });
 
@@ -45,7 +50,10 @@ function Gamepage() {
         <div className="gamepage-root">
         <ResetScroll />
             <Header menuItems={["Games", "Home", "About", "Contact"]} />
-            {(hasData === true) ? 
+            {/*
+                Render branch for found game data 
+            */}
+            {(dataStatus === 1) ? 
                 <div className="gamepage-body global-content-box">
                     <h1 className="gamepage-title">{gameData.title}</h1>
                     <div className="gamepage-top">
@@ -69,8 +77,8 @@ function Gamepage() {
                                 <br />
                                 DOCUMENTS
                                 <hr />
-                                {gameData.documents.map(doc => {
-                                    return <a className="gamepage-downloads" href={dataURL+gameId+"/"+doc} download>{doc}</a>
+                                {gameData.documents.map( (doc,index) => {
+                                    return <a key={index} className="gamepage-downloads" href={dataURL+gameId+"/"+doc} download>{doc}</a>
                                 })}
                             </div>
                             : null
@@ -92,6 +100,17 @@ function Gamepage() {
                     </div>
                 </div>
                 :
+                /*
+                    Render branch for no game data 
+                */
+                (dataStatus === 2) ?
+                // No data found
+                <div className="gamepage-no-data">
+                    <p>Sorry! There's no game here...</p>
+                    <Link to="/games/all"><button>{"<- back to Games"}</button></Link>
+                </div>
+                :
+                // Fetching data...
                 <div className="global-loading">?</div>
             }
             <Footer />

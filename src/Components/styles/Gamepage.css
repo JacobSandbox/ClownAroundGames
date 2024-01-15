@@ -118,3 +118,29 @@ body {
     text-decoration: underline;
     text-align: right;
 }
+
+.gamepage-no-data {
+    width: 100%;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+.gamepage-no-data p {
+    margin: 4rem auto;
+}
+
+.gamepage-no-data button {
+    font-family: inherit;
+    font-size: 1rem;
+
+    background-color: var(--color-primary);
+    border: 1rem solid var(--color-primary);
+    border-radius: 50px;
+
+    transition: box-shadow 250ms;
+}
+
+.gamepage-no-data button:hover {
+    box-shadow: 0 0 0 3px var(--color-accent);
+}

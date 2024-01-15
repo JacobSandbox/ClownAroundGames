@@ -20,42 +20,6 @@ font-family: 'Yeseva One', serif;
     --color-background: white;
 }
 
-/* reset */
-
-/* tags */
-
-img {
-    display: block;
-
-    max-width: 100%;
-
-    font-style: italic;
-}
-
-p {
-    margin: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    position: relative;
-    margin: 0;
-
-    font-family: var(--font-secondary);
-}
-
-a, a:active, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-button {
-    cursor: pointer;
-}
-
 /* id */
 
 /* class */
