@@ -15,7 +15,7 @@ function entryIsMatch ( entry, filter ) {
     if ( filter === "all" ) return true;
 
     // Split filter into individual conditions and check against entry
-    let conditions = filter.split(".");
+    let conditions = filter.split("$");
     for ( let con of conditions ) {
         // Split at the '=' and compare stat to value
         let parts = con.split("=");
