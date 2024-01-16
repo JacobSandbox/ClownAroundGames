@@ -3,12 +3,59 @@ import React, { useEffect, useState } from "react"
 import Header from "./Header";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./styles/Librarypage.css";
 import { useParams } from "react-router-dom";
 
 // Database urls
 const dataURL  = "https://raw.githubusercontent.com/JacobSandbox/ClownAroundGamesDatabase/main/data/";
+
+function compareWords ( first, second ) {
+    let bestScore = 0;
+    // to calc score: 
+    // 'march' shorter word across longer word and find place with most letter matches
+    // final score is the place with % most matches
+
+    let short = null;
+    let long  = null;
+    if ( first.length <= second.length ) {
+        short = first;
+        long = second;
+    } else {
+        short = second;
+        long = first;
+    }
+
+    // March through all offsets to find best match
+    for ( let offset = 0; offset <= (long.length-short.length); offset++ ) {
+        // Loop through letters and calc match % of word at each offset
+        let score = 0;
+        for ( let c = 0; c < short.length; c++ ) {
+            if ( short[c] === long[offset+c] ) score += 1;
+        }
+        // Calc average
+        score = score / short.length;
+        // Save heighest score
+        if ( score > bestScore ) bestScore = score;
+    }
+
+    return bestScore;
+}
+
+function compareSentences ( first, second ) {
+    // Seperate sentences into words and compare each
+    let sentScores = first.split(" ").map( sWord => {
+        // Compare each word in first sentence to all words in second
+        let wordScores = second.split(" ").map( lWord => {
+            return compareWords(sWord.toLowerCase(),lWord.toLowerCase());
+        }).toSorted( (a,b) => {return b-a});
+        // Return best match for word
+        return wordScores[0];
+    });
+
+    // Return the average word match score
+    return sentScores.reduce( (t,s) => {return t+(s/sentScores.length)}, 0);
+}
 
 function entryIsMatch ( entry, filter ) {
     // A filter of 'all' always returns true
@@ -19,9 +66,19 @@ function entryIsMatch ( entry, filter ) {
     for ( let con of conditions ) {
         // Split at the '=' and compare stat to value
         let parts = con.split("=");
-        if ( entry[parts[0]] !== parts[1] ) {
-            // Return false if ANY stat doesn't match
-            return false;
+        if ( parts[0] === "search" ) {
+            // Try to match name
+            // Except 66.7% or greater matches
+            let score = compareSentences ( parts[1].replace("_"," "), entry.title );
+            if ( score <= 0.666 ) {
+                return false;
+            }
+        } else {
+            // Match other criteria
+            if ( entry[parts[0]] !== parts[1] ) {
+                // Return false if ANY stat doesn't match
+                return false;
+            }
         }
     }
 
@@ -35,10 +92,13 @@ function Librarypage() {
     // State
     var [hasData, setHasData] = useState(false);
     var [filterPath, setFilterPath] = useState("/all");
-
+    
     // URL Params
     var { filter } = useParams();
-
+    
+    // Search Params
+    var [query] = useSearchParams();
+    
     // Filter functions
     function updateFilter() {
         // Compile on selected filter options
@@ -55,17 +115,35 @@ function Librarypage() {
         // Time
         option = document.querySelector("#library-time");
         if ( option.value !== "any" ) path += `time=${option.value}$`;
-
+        
         // Set filter button path to filter options
         setFilterPath((path === "/") ? "/all" : path.slice(0,-1));
     }
-
+    
+    function resetOptions() {
+        document.getElementById("library-type").value = "any";
+        document.getElementById("library-genre").value = "any";
+        document.getElementById("library-players").value = "any";
+        document.getElementById("library-time").value = "any";
+    }
+    
     // Fetch game library info from database
+    let metaData = {types: [], genres: [], players: [], times: []};
     useEffect( () => {
         fetch(dataURL+"games.json")
         .then( response => {
             response.json().then( result => {
+                // Store games data
                 libraryData = result;
+                // Compile game meta data
+                for ( let entry of libraryData ) {
+                    // Types
+                    if ( !metaData.types.includes(entry.type) ) metaData.types.push(entry.type);
+                    // Genres
+                    // Players
+                    // Times
+                }
+
                 setHasData(true);
             });
         }).catch( () => {
@@ -120,14 +198,16 @@ function Librarypage() {
                     </span>
                     <span>
                         <Link to={`/games${filterPath}`} id="library-filter-button"><button className="library-filter-btn">Filter</button></Link>
-                        {(filter !== "all") ? <Link to="/games/all" className="library-clear-btn">Clear filters</Link> : null}
+                        {(filter !== "all") ? <Link to="/games/all" className="library-clear-btn" onClick={()=>{resetOptions()}}>Clear filters</Link> : null}
                     </span>
                     -
                 </div>
 
                 <div className="library-browser">
                     {(hasData === true) ? libraryData.map( game => {
-                        if ( entryIsMatch(game, filter) )
+                        let arg = (filter === undefined) ? query.toString() : filter;
+                        console.log(arg);
+                        if ( entryIsMatch(game, arg) )
                             {return <GameCard key={game.id} databaseId={game.databaseId} boxart={dataURL+"games/"+game.databaseId+"/"+game.boxart} title={game.title} genre={game.genre} shoutText={game.shout} />}
                         return null;
                     })  : <div className="global-loading">?</div>}

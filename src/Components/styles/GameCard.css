@@ -113,7 +113,7 @@
   }
   
   .game-card:hover > .game-card-shout > p {
-    animation: 0.6s wiggle ease-in-out alternate infinite;
+    animation: 400ms wiggle ease-in-out alternate infinite;
   }
   
   @keyframes wiggle {

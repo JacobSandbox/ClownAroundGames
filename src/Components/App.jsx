@@ -17,6 +17,10 @@ const router = createHashRouter([
         element: <Librarypage />
     },
     {
+        path: "games",
+        element: <Librarypage />
+    },
+    {
         path: "detail/:gameId",
         element: <Gamepage />
     },
