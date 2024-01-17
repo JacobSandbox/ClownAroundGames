@@ -115,23 +115,20 @@ a:first-child > .menu-item {
 }
 
 @media (orientation:portrait) {
-    .menu-container {
-        box-sizing: border-box;
-        width: 50%;
-        height: 3rem;
-        margin: auto 0.5rem;
+     .menu-container {
+        width: 9rem;
     }
 
     .menu-content {
-        --menu-height: 17.5rem;
+        --menu-height: 13.5rem;
     }
 
     .menu-item,.menu-current {
         margin: 1.5rem auto;
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
-    .menu-current {
+    /* .menu-current {
         color: #0009;
     }
 
@@ -145,5 +142,5 @@ a:first-child > .menu-item {
 
     .menu-label {
         font-size: 1.5rem;
-    }
+    } */
 }

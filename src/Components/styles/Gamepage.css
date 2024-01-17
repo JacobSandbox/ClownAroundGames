@@ -78,12 +78,6 @@ body {
     /* background-color: lightgray; */
 }
 
-@media (orientation:portrait) {
-    .gamepage-top {
-        flex-direction: column;
-    }
-}
-
 .gamepage-bottom {
     width: 100%;
 
@@ -150,4 +144,18 @@ body {
 
 .gamepage-no-data button:hover {
     box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+@media (orientation:portrait) {
+    .gamepage-body {
+        margin: 2rem auto;
+    }
+
+    .gamepage-top {
+        flex-direction: column;
+    }
+
+    .gamepage-title {
+        font-size: 2rem;
+    }
 }

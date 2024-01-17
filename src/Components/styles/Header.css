@@ -29,6 +29,7 @@
 @media (orientation:portrait) {
     .header-title {
         flex: 1fr;
+        font-size: 0.75rem;
     }
 
     .header-spacer {

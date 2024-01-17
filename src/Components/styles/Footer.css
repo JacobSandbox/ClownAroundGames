@@ -25,3 +25,15 @@
 
     cursor: pointer;
 }
+
+@media (orientation:portrait) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        font-size: 0.5rem;
+        text-align: left;
+        text-indent: 1rem;
+    }
+}
