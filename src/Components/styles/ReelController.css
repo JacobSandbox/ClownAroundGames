@@ -117,3 +117,10 @@
 .reel-control-right {
     right: 0px;
 }
+
+
+@media (orientation:portrait) {
+    .reel-controller {
+        display: none;
+    }
+}

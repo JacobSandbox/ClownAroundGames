@@ -140,3 +140,8 @@
     border-radius: 100%;
   }
   
+  @media (orientation:portrait) {
+    .game-card {
+      width: 275px
+    }
+  }

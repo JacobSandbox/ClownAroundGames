@@ -25,3 +25,20 @@
 .homepage-curtain:first-child {
     scale: -1 1;
 }
+
+.homepage-carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+@media (orientation:portrait) {
+    .homepage-carousel-container {
+        width: 100vw;
+        
+        margin: auto -2rem;
+    }
+
+    .homepage-curtain {
+        display: none;
+    }
+}

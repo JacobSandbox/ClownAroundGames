@@ -13,7 +13,7 @@ function Menu ( props ) {
                     if ( item.charAt(0) === "$" ) return <p key={index} className="menu-current">{`-${item.slice(1)}-`}</p>
                     return <Link key={index} to={location}><button className="menu-item">{item}</button></Link>
                 })}
-                <p>Menu</p>
+                <p className="menu-label">Menu</p>
             </div>
         </div>
     </div>

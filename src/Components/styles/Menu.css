@@ -66,10 +66,6 @@
     rotate: -5deg;
 }
 
-/* .menu-item:active {
-    background-color: white;
-} */
-
 a:first-child > .menu-item {
     font-size: 1rem;
     transition: rotate 150ms;
@@ -102,12 +98,6 @@ a:first-child > .menu-item {
     scale: 0.75;
 }
 
-.menu-control {
-    width: 30px;
-    height: 30px;
-    background-color: red;
-}
-
 .menu-current {
     position: relative;
 
@@ -122,4 +112,38 @@ a:first-child > .menu-item {
 
 .menu-current:first-child{
     font-size: 1rem;
+}
+
+@media (orientation:portrait) {
+    .menu-container {
+        box-sizing: border-box;
+        width: 50%;
+        height: 3rem;
+        margin: auto 0.5rem;
+    }
+
+    .menu-content {
+        --menu-height: 17.5rem;
+    }
+
+    .menu-item,.menu-current {
+        margin: 1.5rem auto;
+        font-size: 1.5rem;
+    }
+
+    .menu-current {
+        color: #0009;
+    }
+
+    a:first-child > .menu-item {
+        font-size: 2rem;
+    }
+
+    .menu-current:first-child {
+        font-size: 2rem;
+    }
+
+    .menu-label {
+        font-size: 1.5rem;
+    }
 }

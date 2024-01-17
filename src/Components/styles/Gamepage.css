@@ -66,6 +66,7 @@ body {
 
 .gamepage-top {
     display: flex;
+    flex-direction: row;
     gap: 1rem;
     justify-content: space-between;
     align-items: center;
@@ -75,6 +76,12 @@ body {
     position: relative;
 
     /* background-color: lightgray; */
+}
+
+@media (orientation:portrait) {
+    .gamepage-top {
+        flex-direction: column;
+    }
 }
 
 .gamepage-bottom {

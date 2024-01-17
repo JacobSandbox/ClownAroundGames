@@ -25,3 +25,13 @@
 .header-spacer {
     flex: auto;
 }
+
+@media (orientation:portrait) {
+    .header-title {
+        flex: 1fr;
+    }
+
+    .header-spacer {
+        display: none;
+    }
+}
