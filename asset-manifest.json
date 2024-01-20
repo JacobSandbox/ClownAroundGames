@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4447ca6.css",
-    "main.js": "/static/js/main.e60795b4.js",
+    "main.css": "/static/css/main.b1d75783.css",
+    "main.js": "/static/js/main.aeba2028.js",
     "static/media/curtain.png": "/static/media/curtain.35530727a3d652856dcf.png",
     "static/media/GC_logo.png": "/static/media/GC_logo.6a322a76e3f2bd212709.png",
     "index.html": "/index.html",
-    "main.e4447ca6.css.map": "/static/css/main.e4447ca6.css.map",
-    "main.e60795b4.js.map": "/static/js/main.e60795b4.js.map"
+    "main.b1d75783.css.map": "/static/css/main.b1d75783.css.map",
+    "main.aeba2028.js.map": "/static/js/main.aeba2028.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4447ca6.css",
-    "static/js/main.e60795b4.js"
+    "static/css/main.b1d75783.css",
+    "static/js/main.aeba2028.js"
   ]
 }
