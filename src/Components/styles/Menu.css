@@ -38,7 +38,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: var(--menu-height);
+    height: var(--menu-height); 
 
     background-color: yellowgreen;
 }
@@ -127,20 +127,9 @@ a:first-child > .menu-item {
         margin: 1.5rem auto;
         /* font-size: 1.5rem; */
     }
+}
 
-    /* .menu-current {
-        color: #0009;
-    }
-
-    a:first-child > .menu-item {
-        font-size: 2rem;
-    }
-
-    .menu-current:first-child {
-        font-size: 2rem;
-    }
-
-    .menu-label {
-        font-size: 1.5rem;
-    } */
+.menu-content:has(a:focus),.menu-content:hover:has(a:focus) {
+    height: var(--menu-height);
+    filter: drop-shadow(5px 5px 5px black);
 }

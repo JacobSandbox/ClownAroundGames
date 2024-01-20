@@ -38,16 +38,13 @@
 
     object-fit: cover;
     object-position: center;
+
+    cursor: pointer;
 }
 
 .collage-setup {
     flex: 65%;
 }
-/* 
-.collage-setup>img {
-    width: 100%;
-    height: auto;
-} */
 
 .collage-inner {
     display: flex;
@@ -69,6 +66,33 @@
 .collage-detail {
     flex: 40%;
     animation-delay: 900ms;
+}
+
+.collage-fullview {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100svh;
+    z-index: 1000;
+
+    background-color: #000a;
+}
+
+.collage-fullview-close {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+
+    color: white;
+    font-size: 2rem;
+
+    background-color: #0005;
+    border: none;
 }
 
 @keyframes collage-fade-in {

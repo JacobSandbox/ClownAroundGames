@@ -3,6 +3,7 @@
 import Header from "./Header";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import "./styles/Homepage.css";
 
 let items = [
@@ -13,6 +14,7 @@ let items = [
 
 function Homepage() {
     return (<div>
+        <Link to="/games/all" className="homepage-skip-nav">{"<-"} To the GAMES!</Link>
         <Header menuItems={["Games", "$Home", "About", "Contact"]}/>
         <div className="homepage-content global-content-box">
             <div className="homepage-curtain-container">

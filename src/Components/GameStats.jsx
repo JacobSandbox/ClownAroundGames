@@ -7,8 +7,8 @@ function GameStats ( props ) {
         <div className="game-stats-container">
 
             <div className="game-stats-genres">
-                {props.genres.map( genre => {
-                    return <GenreIcon key={Math.random() * 100} genre={genre} />
+                {props.genres.map( (genre, index) => {
+                    return <GenreIcon key={index} genre={genre} />
                 })}
             </div>
 
@@ -23,9 +23,11 @@ function GameStats ( props ) {
             <div className="game-stats-icon"></div>
 
             <div className="game-stats-purchase-container">
-                <a href={props.url} target="_blank"><div className="game-stats-purchase">
-                    <p>Buy at </p>
-                </div></a>
+                <a href={props.url} target="_blank" rel="noreferrer">
+                    <div className="game-stats-purchase">
+                        <p>Buy at</p>
+                    </div>
+                </a>
             </div>
         </div>
     );

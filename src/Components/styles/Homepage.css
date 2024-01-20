@@ -31,6 +31,27 @@
     width: 100%;
 }
 
+.homepage-skip-nav {
+    position: absolute;
+    left: -250px;
+    top: 4rem;
+    z-index: 1000;
+
+    padding: 1rem;
+    
+    font-family: var(--font-primary);
+
+    background-color: var(--color-primary);
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0.5rem 0.5rem 0.5rem #000a;
+
+    transition: left 250ms;
+}
+
+.homepage-skip-nav:focus {
+    left: 0px;
+}
+
 @media (orientation:portrait) {
     .homepage-carousel-container {
         width: 100vw;

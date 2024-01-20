@@ -6,7 +6,7 @@ import glass from "./images/magnifying_glass.png";
 function SearchBar() {
     return <Form className="search-form" action="/games">
         <input className="search-bar" type="search" name="search" placeholder="Search..." required></input>
-        <button className="search-button">
+        <button className="search-button" tabIndex={-1}>
             <img src={glass} alt="search button" />
         </button>
     </Form>

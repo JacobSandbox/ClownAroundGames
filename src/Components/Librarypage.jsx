@@ -197,7 +197,7 @@ function Librarypage() {
                         </select>
                     </span>
                     <span>
-                        <Link to={`/games${filterPath}`} id="library-filter-button"><button className="library-filter-btn">Filter</button></Link>
+                        <Link to={`/games${filterPath}`} id="library-filter-button" tabIndex={-1}><button className="library-filter-btn">Filter</button></Link>
                         {(filter !== "all") ? <Link to="/games/all" className="library-clear-btn" onClick={()=>{resetOptions()}}>Clear filters</Link> : null}
                     </span>
                     -

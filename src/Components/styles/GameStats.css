@@ -108,8 +108,12 @@ Purchase button
     transition: 150ms rotate;
 }
 
-.game-stats-purchase-container:hover {
+.game-stats-purchase-container:hover, .game-stats-purchase-container:has( > a:focus ) {
     rotate: -3deg;
+}
+
+.game-stats-purchase-container:has( > a:focus ) {
+    outline: 3px dashed lightskyblue;
 }
 
 .game-stats-purchase {
@@ -143,7 +147,6 @@ Purchase button
     font-size: min(1.75vw, 20px);
     
     padding-left: 15%;
-    
     
     z-index: 2;
 }
