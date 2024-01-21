@@ -22,6 +22,7 @@ function GenreIcon ( props ) {
     return (
         <div className="genre-icon">
             <img className="genre-icon-image" src={(props.genre !== undefined) ? icons[props.genre] : null} title={props.genre}  alt={`${props.genre} game`} />
+            {(props.showLabel !== undefined) ? <p className="genre-label" style={{fontSize:Math.min(6/props.genre.length,1) + "rem"}}>{props.genre}</p> : null}
         </div>
     );
 }

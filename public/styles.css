@@ -4,6 +4,7 @@ img {
     display: block;
 
     max-width: 100%;
+    height: auto;
 
     font-style: italic;
 }
@@ -25,6 +26,7 @@ body {
 
 a, a:active, a:visited {
     text-decoration: none;
+    -webkit-text-decoration: none;
     color: black;
 }
 

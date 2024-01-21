@@ -2,7 +2,8 @@
 
 .collage-container {
     --cont-width: min(50%, 45em);
-    display: flex;
+    display: grid;
+    grid: repeat(20,1fr) / repeat(20, 1fr);
 
     flex: 3;
 
@@ -19,7 +20,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: lime;
+    background-color: lightgray;
     border-radius: min(1.5vw, 1em);
 
     opacity: 0;
@@ -43,7 +44,7 @@
 }
 
 .collage-setup {
-    flex: 65%;
+    grid-area: span 20 / span 13;
 }
 
 .collage-inner {
@@ -54,17 +55,17 @@
 }
 
 .collage-zoom {
-    flex: 15%;
+    grid-area: span 20 / span 3;
     animation-delay: 650ms;
 }
 
 .collage-action {
-    flex: 60%;
+    grid-area: span 12 / span 4;
     animation-delay: 800ms;
 }
 
 .collage-detail {
-    flex: 40%;
+    grid-area: span 8 / span 4;
     animation-delay: 900ms;
 }
 
@@ -102,5 +103,11 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@media ( orientation: portrait ) {
+    .collage-setup, .collage-zoom, .collage-action, .collage-detail {
+        grid-area: span 10 / span 10;
     }
 }

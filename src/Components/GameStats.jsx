@@ -8,7 +8,7 @@ function GameStats ( props ) {
 
             <div className="game-stats-genres">
                 {props.genres.map( (genre, index) => {
-                    return <GenreIcon key={index} genre={genre} />
+                    return <GenreIcon key={index} genre={genre} showLabel="true" />
                 })}
             </div>
 
