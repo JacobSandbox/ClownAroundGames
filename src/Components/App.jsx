@@ -3,9 +3,9 @@ import Gamepage from "./Gamepage";
 import Librarypage from "./Librarypage";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./NotFound";
-import "./styles/App.css";
 import Contactpage from "./Contactpage";
 import Aboutpage from "./Aboutpage";
+import "./styles/App.css";
 
 const router = createHashRouter([
     {

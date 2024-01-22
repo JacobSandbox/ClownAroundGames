@@ -110,4 +110,8 @@
     .collage-setup, .collage-zoom, .collage-action, .collage-detail {
         grid-area: span 10 / span 10;
     }
+
+    .collage-container {
+        aspect-ratio: auto;
+    }
 }
