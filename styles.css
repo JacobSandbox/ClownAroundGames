@@ -27,7 +27,7 @@ body {
 a, a:active, a:visited, a:link, a:hover {
     text-decoration: none;
     -webkit-text-decoration: none;
-    color: black;
+    color: lime;
 }
 
 button {
