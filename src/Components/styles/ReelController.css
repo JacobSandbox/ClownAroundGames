@@ -83,7 +83,7 @@
 
     overflow: clip;
 
-    transition: left 250ms, var(--bar-progress) 100ms;
+    transition: left 2500ms, var(--bar-progress) 100ms;
 }
 
 .reel-control-progress-bar::before {

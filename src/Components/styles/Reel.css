@@ -15,6 +15,8 @@
     left: 0;
 
     background-color: orangered;
+
+    transition: left 250ms;
 }
 
 .reel-image {
@@ -24,10 +26,4 @@
     
     vertical-align: middle;
     font-style: italic;
-}
-
-@media (orientation:portrait) {
-    .reel-item {
-        
-    }
 }

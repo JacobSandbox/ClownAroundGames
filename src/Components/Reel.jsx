@@ -11,7 +11,7 @@ function Reel ( props ) {
     }
 
     for ( let i = 0; i < items.length; i++ ) {
-        let parts      = items[i].imgUrl.split(".");
+        let parts      = items[i].image.split(".");
         let lowres     = 'url("' + parts[0] + '_lowres.' + parts[1] + '")';
         let baseOffset = -(props.slide * 100) + "%";
         let gapOffset  = -props.slide*gap + "px";
@@ -20,7 +20,7 @@ function Reel ( props ) {
             <div key={items[i].id} className="reel-item" style={{left:offset}}>
                 <img 
                     className="reel-image"
-                    src={items[i].imgUrl}
+                    src={items[i].image}
                     alt={items[i].alt} 
                     style={{backgroundImage:lowres}}
                 />

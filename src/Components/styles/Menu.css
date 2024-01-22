@@ -40,7 +40,7 @@
     width: 100%;
     height: var(--menu-height); 
 
-    background-color: yellowgreen;
+    background-color: var(--color-primary);
 }
 
 .menu-item {
@@ -51,6 +51,7 @@
     
     font-family: 'Rubik Mono One', monospace;
     font-size: 0.75rem;
+    -webkit-text-fill-color: black;
     
     border: none;
     background-color: transparent;
@@ -77,8 +78,8 @@ a:first-child > .menu-item {
     position: absolute;
     inset: 25% 15% 25% 15%;
 
-    background-color: #985BFE;
-    box-shadow: 0 0 5px 5px #985BFE;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 5px 5px var(--color-accent);
 
     z-index: -1;
 
@@ -125,7 +126,6 @@ a:first-child > .menu-item {
 
     .menu-item,.menu-current {
         margin: 1.5rem auto;
-        /* font-size: 1.5rem; */
     }
 }
 
