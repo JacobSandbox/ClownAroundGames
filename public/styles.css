@@ -29,6 +29,8 @@ a, a:active, a:visited, a:link, a:hover {
     -webkit-text-decoration: none;
     color: black;
     -webkit-text-fill-color: currentColor;
+
+    cursor: pointer;
 }
 
 button {
