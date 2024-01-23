@@ -86,7 +86,7 @@
   }
   
   .game-card-shout > p {
-    --shout-size: 1.25rem;
+    --shout-size: 1rem;
 
     position: absolute;
     top: 50%;
