@@ -31,6 +31,9 @@
 .homepage-carousel-container {
     position: relative;
     width: 100%;
+
+    background-image: url("../images/homepage_bg.png");
+    background-size: cover;
 }
 
 .homepage-skip-nav {
@@ -54,11 +57,33 @@
     left: 0px;
 }
 
+.homepage-quicklinks {
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-banner {
+    font-size: 3rem;
+    text-align: center;
+
+    background-image: url("../images/banner.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.homepage-quicklinks ul {
+    list-style-type: none;
+}
+
 @media (orientation:portrait) {
     .homepage-carousel-container {
         width: 100vw;
         
         margin: auto -2rem;
+
+        background-color: var(--color-accent);
+        background-image: none;
     }
 
     .homepage-curtain {
