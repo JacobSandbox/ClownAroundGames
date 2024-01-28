@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.bf86af4d.css",
-    "main.js": "/static/js/main.7a45ed64.js",
+    "main.css": "/static/css/main.b8781738.css",
+    "main.js": "/static/js/main.59fb4bf2.js",
+    "static/media/homepage_bg.png": "/static/media/homepage_bg.b856b9bde6e328843fa3.png",
     "static/media/curtain.png": "/static/media/curtain.35530727a3d652856dcf.png",
     "static/media/GC_logo.png": "/static/media/GC_logo.6a322a76e3f2bd212709.png",
     "static/media/gamestats_bg.png": "/static/media/gamestats_bg.597787d514e4ebeb0d34.png",
     "index.html": "/index.html",
-    "main.bf86af4d.css.map": "/static/css/main.bf86af4d.css.map",
-    "main.7a45ed64.js.map": "/static/js/main.7a45ed64.js.map"
+    "main.b8781738.css.map": "/static/css/main.b8781738.css.map",
+    "main.59fb4bf2.js.map": "/static/js/main.59fb4bf2.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf86af4d.css",
-    "static/js/main.7a45ed64.js"
+    "static/css/main.b8781738.css",
+    "static/js/main.59fb4bf2.js"
   ]
 }
