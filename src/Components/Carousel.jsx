@@ -3,7 +3,7 @@ import Reel from "./Reel";
 import ReelController from "./ReelController";
 import "./styles/Carousel.css";
 
-// Info display reel
+// news display reel
 
 function Carousel ( props ) {
     const [slide, setSlide] = React.useState(0);

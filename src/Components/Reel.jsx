@@ -40,7 +40,7 @@ function Reel ( props ) {
                 return <Link to={item.url} key={index} className="reel-item" style={{left:offset}}>
                     <img 
                         className="reel-image"
-                        src={item.image}
+                        src={dataPath+item.image}
                         alt={item.desc}
                     />
                 </Link>;
