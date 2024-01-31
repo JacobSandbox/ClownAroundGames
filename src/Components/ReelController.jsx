@@ -15,6 +15,10 @@ function ReelController ( props ) {
         changeProgress(dir)
     }
 
+    function HandleTouch (e) {
+        console.log("a;sldfjk");
+    }
+
     function changeProgress ( amount ) {
         // Move to slide in given direction
         let newPro = progress+amount;
@@ -47,7 +51,7 @@ function ReelController ( props ) {
     });
 
     return <div className="reel-controller">
-        <div className="reel-control-button reel-control-left" onClick={()=>{handleClick(-1);}}></div>
+        <div className="reel-control-button reel-control-left" onClick={()=>{handleClick(-1);}} onTouchStart={()=>{console.log("touch")}}></div>
         <div className="reel-control-progress-bar-track">
             <div
                 className="reel-control-progress-bar"

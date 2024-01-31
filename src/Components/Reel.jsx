@@ -30,9 +30,10 @@ function Reel ( props ) {
     //         </div>
     //     )
     // }
+    let reelSize = (props.size > window.innerWidth ? window.innerWidth : props.size) + "px";
 
     return (
-        <div className="reel" style={{gap:gap+"px", width:props.size+"px", height:props.size + "px"}}>
+        <div className="reel" style={{gap:gap+"px", width:reelSize, height:reelSize}}>
             {items.map( (item, index)=> {
                 let baseOffset = `${-props.slide*100}%`;
                 let gapOffset  = `${-props.slide*gap}px`;
