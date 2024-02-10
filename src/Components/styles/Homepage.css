@@ -94,3 +94,23 @@
         overflow: hidden;
     }
 }
+
+.homepage-sitemap {
+    list-style: none;
+
+    font-size: 0.8rem;
+}
+
+.homepage-sitemap > li {
+    display: inline;
+
+    margin: 1rem;
+    padding-left: 1rem;
+
+    border: 0 solid black;
+    border-left-width: 2px;
+}
+
+.homepage-sitemap > li:nth-child(1) {
+    border: none;
+}

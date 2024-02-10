@@ -3,32 +3,62 @@
 .contactpage-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     margin: 2rem;
 }
 
 .contactpage-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    position: relative;
 
-    width: 100%;
-
-    padding: 2rem;
-
-    box-sizing: border-box;
+    width: 40rem;
 
     font-family: var(--font-primary);
 }
 
-a.contactpage-mailto {
-    font-size: 3rem;
+.contactpage-content:nth-child(2) {
+    font-size: 2rem;
+}
+
+.contactpage-content:nth-child(3) {
+    margin-bottom: 2rem;
+
+    color: grey;
+    font-style: italic;
+    text-indent: 2rem;
+}
+
+.contactpage-content:nth-child(4) {
+    width: 100%;
+
+    isolation: isolate;
     
-    color: blue;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    
+    color: white;
+    text-indent: calc(50% - 20rem);
+}
+
+.contactpage-content:nth-child(4)::before {
+    content: "";
+
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: -1;
+
+    background-color: var(--color-accent);
+    border-radius: 30rem 2rem;
+}
+
+a.contactpage-mailto {
+    padding: 1rem 2rem;
+
+    font-size: 1.5rem;
+    color: black;
     text-decoration: underline;
 
-    transition: color 500ms;
+    background-color: white;
+    border-radius: 1rem;
 }

@@ -14,18 +14,12 @@ function Contactpage() {
             <Header menuItems={["Games", "Home", "About", "$Contact"]} />
             <div className="contactpage-body global-content-box">
                 <h1>Contact Us</h1>
-                <div className="contactpage-content">
-                    <p>Questions, comments, concerns? Issue with a product? Want to sell our games in your store? Message us!</p>
-                    <p>Please...</p>
-                    <ul>
-                        <li>a</li>
-                        <li>b</li>
-                        <li>c</li>
-                        <li>d</li>
-                    </ul>
-                    <label htmlFor="topic">What's on your mind?</label>
-                    <a className="contactpage-mailto" href="">[ \@/ ] Mail Link</a>
-                </div>
+                <p className="contactpage-content">Questions, comments, or concerns? Looking to sell our games in your store? Let us know what's on your mind!</p>
+                <p className="contactpage-content">*Please add a subject line which describes the reason for contacting us. This helps us more accurately respond to your issue(s)!</p>
+                <p className="contactpage-content">
+                {"Contact us at: "}
+                    <a className="contactpage-mailto" href="mailto:contact@clownaroundgames.com">Contact@ClownAroundGames.com</a>
+                </p>
             </div>
             <Footer />
         </div>

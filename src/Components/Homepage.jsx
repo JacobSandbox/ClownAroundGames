@@ -48,6 +48,11 @@ function Homepage() {
                     </li>
                 </ul>
             </div>
+            <ul className="homepage-sitemap">
+                <li><Link to="/games/all">Games</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+            </ul>
         </div>
         <Footer />
     </div>);
