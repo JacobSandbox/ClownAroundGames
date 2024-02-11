@@ -146,6 +146,17 @@ body {
     box-shadow: 0 0 0 3px var(--color-accent);
 }
 
+.gamepage-bottom > p:last-child {
+    font-style: italic;
+}
+
+.gamepage-back {
+    margin: 0;
+
+    font-size: 1rem;
+    font-family: var(--font-primary);
+}
+
 @media (orientation:portrait) {
     .gamepage-body {
         margin: 2rem auto;

@@ -36,17 +36,11 @@ function Homepage() {
             </div>
             <h2 style={{fontSize:"2rem"}}>Apologies! Site is under construction! Come back soon!</h2>
             <div className="homepage-quicklinks">
-                <ul>
-                    <li>
-                        <p className="homepage-banner">Games{"->"}</p>
-                    </li>
-                    <li>
-                        <p className="homepage-banner">About{"->"}</p>
-                    </li>
-                    <li>
-                        <p className="homepage-banner">Contact{"->"}</p>
-                    </li>
-                </ul>
+                <p>Independantly created games for all kinds of players!</p>
+                <Link to="/games/all">to the games!{" ->"}</Link>
+                <div className="homepage-story">
+                    <p>Independantly designed and produced, Clown Around Games is made by one who loves playing games just as much as you do... <Link to="/about">Read the full story</Link></p>
+                </div>
             </div>
             <ul className="homepage-sitemap">
                 <li><Link to="/games/all">Games</Link></li>

@@ -55,6 +55,7 @@ function Gamepage() {
             */}
             {(dataStatus === 1) ? 
                 <div className="gamepage-body global-content-box">
+                    <Link className="gamepage-back" to="/games/all">{"<- back to games"}</Link>
                     <h1 className="gamepage-title">{gameData.title}</h1>
                     <div className="gamepage-top">
                         <ImageCollage imageData={{
@@ -97,6 +98,7 @@ function Gamepage() {
                         <div className="gamepage-contact-us">
                             <Link to="/contact">Wanna sell our games in your store? Contact us!</Link>
                         </div>
+                        <p>*Games may contain small parts and are not intended for young children*</p>
                     </div>
                 </div>
                 :
