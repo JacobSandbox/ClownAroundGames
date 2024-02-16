@@ -40,6 +40,6 @@
 
 @media (orientation:portrait) {
     .search-form {
-        display: none;
+        grid-area: auto / span 2;
     }
 }

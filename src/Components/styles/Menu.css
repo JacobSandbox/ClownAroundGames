@@ -116,6 +116,11 @@ a:first-child > .menu-item {
     font-size: 1rem;
 }
 
+.menu-content:has(a:focus),.menu-content:hover:has(a:focus) {
+    height: var(--menu-height);
+    filter: drop-shadow(5px 5px 5px black);
+}
+
 @media (orientation:portrait) {
      .menu-container {
         width: 9rem;
@@ -128,9 +133,4 @@ a:first-child > .menu-item {
     .menu-item,.menu-current {
         margin: 1.5rem auto;
     }
-}
-
-.menu-content:has(a:focus),.menu-content:hover:has(a:focus) {
-    height: var(--menu-height);
-    filter: drop-shadow(5px 5px 5px black);
 }

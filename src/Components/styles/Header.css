@@ -31,8 +31,15 @@
         flex: 1fr;
         font-size: 0.75rem;
     }
-
+    
     .header-spacer {
         display: none;
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
     }
 }
