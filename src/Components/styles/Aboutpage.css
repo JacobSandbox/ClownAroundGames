@@ -4,6 +4,11 @@
 }
 
 .aboutpage-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 1fr;
+    justify-content: center;
+
     margin: 4rem auto 2rem auto;
 
     font-family: var(--font-primary);
@@ -11,17 +16,32 @@
 }
 
 .aboutpage-photo {
-    float: left;
+    grid-area: span 2 / span 1;
 
-    box-sizing: border-box;
+    margin: auto;
 
-    padding: 1rem;
-
-    width: 500px;
-    height: 75svh;
+    width: 400px;
+    height: 600px;
 }
 
-.aboutpage-text {
-    display: flex;
-    flex-direction: column;
+@media (orientation:portrait) {
+    .aboutpage-content {
+        display: initial;
+        margin: 1rem auto;
+    }
+
+    .aboutpage-photo {
+        width: 10rem;
+        height: 14rem;
+
+        margin: 0 1rem 1rem 1rem;
+
+        float: left;
+
+        padding-left: 0;
+    }
+
+    .aboutpage-text {
+        padding: 0 1rem;
+    }
 }
