@@ -100,16 +100,6 @@
     font-size: 1rem;
 }
 
-.homepage-banner {
-    font-size: 3rem;
-    text-align: center;
-
-    background-image: url("../images/banner.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .homepage-sitemap {
     list-style: none;
 
@@ -130,6 +120,17 @@
 .homepage-sitemap > li:nth-child(1) {
     border: none;
     padding-left: 0;
+}
+
+.homepage-banner {
+    width: 100%;
+    height: 5rem;
+
+    background-color: var(--color-primary);
+    mask: url("../images/wavy_banner.png");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: 0 -3rem;
 }
 
 @media (orientation:portrait) {
@@ -156,5 +157,9 @@
 
         text-align: center;
         font-size: 1.25rem;
+    }
+
+    .homepage-banner {
+        display: none;
     }
 }

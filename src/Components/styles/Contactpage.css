@@ -41,7 +41,8 @@
     text-indent: calc(50% - 20rem);
 }
 
-.contactpage-content:nth-child(4)::before {
+.contactpage-content:nth-child(4)::before,
+.contactpage-mailto-mobile::before {
     content: "";
 
     position: absolute;
@@ -54,11 +55,45 @@
 
 a.contactpage-mailto {
     padding: 1rem 2rem;
-
+    
     font-size: 1.5rem;
     color: black;
     text-decoration: underline;
-
+    
     background-color: white;
     border-radius: 1rem;
+}
+
+.contactpage-mailto-mobile::before {
+    inset: -1rem -2rem;
+}
+
+.contactpage-mailto-mobile {
+    display: none;
+    
+    position: relative;
+    margin: 2rem 1rem;
+    padding: 0.5rem 1rem;
+
+    background-color: white;
+
+    border-radius: 100px;
+}
+
+@media (orientation:portrait) {
+    .contactpage-header {
+        font-size: 1.8rem;
+    }
+
+    .contactpage-content {
+        width: 100%;
+    }
+
+    .contactpage-desktop {
+        display: none;
+    }
+
+    .contactpage-mailto-mobile {
+        display: block;
+    }
 }
