@@ -29,20 +29,7 @@
     text-indent: 2rem;
 }
 
-.contactpage-content:nth-child(4) {
-    width: 100%;
-
-    isolation: isolate;
-    
-    margin-top: 2rem;
-    padding: 2rem 0;
-    
-    color: white;
-    text-indent: calc(50% - 20rem);
-}
-
-.contactpage-content:nth-child(4)::before,
-.contactpage-mailto-mobile::before {
+.contactpage-mail::before {
     content: "";
 
     position: absolute;
@@ -53,31 +40,29 @@
     border-radius: 30rem 2rem;
 }
 
-a.contactpage-mailto {
+.contactpage-mail {
+    position: relative;
+
     padding: 1rem 2rem;
+    width: 50rem;
     
     font-size: 1.5rem;
+    text-align: center;
     color: black;
-    text-decoration: underline;
-    
+}
+
+.contactpage-mail > p:nth-child(1) {
+    font-size: 1rem;
+}
+
+.contactpage-mail > p:nth-child(2) {
     background-color: white;
+
+    width: fit-content;
+    margin: 1rem auto 0 auto;
+
+    border: 1rem solid white;
     border-radius: 1rem;
-}
-
-.contactpage-mailto-mobile::before {
-    inset: -1rem -2rem;
-}
-
-.contactpage-mailto-mobile {
-    display: none;
-    
-    position: relative;
-    margin: 2rem 1rem;
-    padding: 0.5rem 1rem;
-
-    background-color: white;
-
-    border-radius: 100px;
 }
 
 @media (orientation:portrait) {
@@ -88,12 +73,28 @@ a.contactpage-mailto {
     .contactpage-content {
         width: 100%;
     }
-
-    .contactpage-desktop {
-        display: none;
+ 
+    .contactpage-mail::before {
+        border-radius: 2rem;
     }
+    
+    .contactpage-mail {
+        width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .contactpage-mail > p:nth-child(1) {
+        font-size: 1rem;
 
-    .contactpage-mailto-mobile {
-        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contactpage-mail > p:nth-child(2) {
+        margin: auto;
+
+        font-family: var(--font-primary);
+        font-size: 1rem;
+
+        border: 0.5rem solid white;
     }
 }

@@ -35,10 +35,12 @@ function Homepage() {
                 <Carousel items={newsItems} itemCount="3" size="400" />
             </div>
             <div className="homepage-banner"></div>
-            <h2 style={{fontSize:"2rem"}}>Apologies! Site is under construction! Come back soon!</h2>
             <div className="homepage-quicklinks">
-                <p>Games for the fun of it!</p>
-                <Link to="/games/all">to the games!{" ->"}</Link>
+                <div className="homepage-splash">
+                    <p>Games for the fun of it!</p>
+                    <div className="homepage-splash-img" />
+                    <Link to="/games/all">Let's Play!{" ->"}</Link>
+                </div>
                 <div className="homepage-story">
                     <p>Independantly designed and produced, Clown Around Games is made by one who loves playing games just as much as making them... <Link to="/about">Read the full story</Link></p>
                 </div>

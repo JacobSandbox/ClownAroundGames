@@ -26,6 +26,12 @@
     flex: auto;
 }
 
+.header-logo {
+    height: 1.8rem;
+
+    margin-right: 2rem;
+}
+
 @media (orientation:portrait) {
     .header-title {
         flex: 1fr;
@@ -41,5 +47,10 @@
         grid-template-columns: 50% 1fr;
         grid-template-rows: 1fr 1fr;
         justify-content: center;
+    }
+
+    .header-logo {
+        height: 1rem;
+        margin: 0;
     }
 }

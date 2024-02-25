@@ -15,12 +15,11 @@ function Contactpage() {
             <div className="contactpage-body global-content-box">
                 <h1 className="contactpage-header">Contact Us</h1>
                 <p className="contactpage-content">Questions, comments, or concerns? Looking to sell our games in your store? Let us know what's on your mind!</p>
-                <p className="contactpage-content">*Please add a subject line which describes the reason for contacting us. This helps us more accurately respond to your issue(s)!</p>
-                <p className="contactpage-content contactpage-desktop">
-                    {"Contact us at: "}
-                    <a className="contactpage-mailto" href="mailto:clownaroundgames@gmail.com">ClownAroundGames@gmail.com</a>
-                </p>
-                <a className="contactpage-mailto-mobile" href="mailto:clownaroundgames@gmail.com">Send Message</a>
+                <p className="contactpage-content">*Please provide as much info about your concerns as possible. This helps us more accurately respond to your issue(s)!</p>
+                <div className="contactpage-mail">
+                    <p>Message us at:</p>
+                    <p>ClownAroundGames@gmail.com</p>
+                </div>
             </div>
             <Footer />
         </div>
