@@ -39,7 +39,7 @@ function Homepage() {
                 <div className="homepage-splash">
                     <p>Games for the fun of it!</p>
                     <div className="homepage-splash-img" />
-                    <Link to="/games/all">Let's Play!{" ->"}</Link>
+                    <Link to="/games/all">Let's Play!</Link>
                 </div>
                 <div className="homepage-story">
                     <p>Independantly designed and produced, Clown Around Games is made by one who loves playing games just as much as making them... <Link to="/about">Read the full story</Link></p>

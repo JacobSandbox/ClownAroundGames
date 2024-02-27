@@ -82,8 +82,26 @@
 }
 
 .homepage-story a {
+    position: relative;
     font-family: var(--font-secondary);
     font-size: 1rem;
+}
+
+.homepage-story a::before {
+    content: "";
+    position: absolute;
+    inset: -2px 0 -2px 0;
+    width: 0;
+    z-index: -1;
+    
+    border: 0 solid black;
+    border-bottom-width: 3px;
+
+    transition: width 250ms ease-out;
+}
+
+.homepage-story a:hover::before {
+    width: 100%;
 }
 
 .homepage-sitemap {
@@ -191,7 +209,13 @@
 
     background-color: var(--color-primary);
     border: 2rem solid var(--color-primary);
-    border-radius: 50rem;
+    border-radius: 3rem;
+
+    transition: border-radius 200ms;
+}
+
+.homepage-splash > a:hover {
+    border-radius: 1rem;
 }
 
 @media (orientation:portrait) {
@@ -212,15 +236,41 @@
         overflow: hidden;
     }
 
-    .homepage-quicklinks > a {
-        margin: 2rem auto;
-        width: 80%;
-
-        text-align: center;
-        font-size: 1.25rem;
-    }
-
     .homepage-banner {
         display: none;
+    }
+
+    .homepage-splash {
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+    }
+
+    .homepage-splash > p {
+        margin: 0;
+
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .homepage-splash > p::before {
+        display: none;
+    }
+
+    .homepage-splash-img {
+        margin:0;
+        width: 100%;
+
+        border-radius: 0;
+    }
+
+    .homepage-splash > a {
+        width: 100%;
+        margin: 2rem 0 0 0 ;
+        box-sizing: border-box;
+
+        font-size: 1rem;
+
+        border-width: 1.5rem;
     }
 }
