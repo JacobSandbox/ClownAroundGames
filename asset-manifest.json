@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.390c69f5.css",
+    "main.css": "/static/css/main.b8171d59.css",
     "main.js": "/static/js/main.96d420e7.js",
     "static/media/homepage_splash.png": "/static/media/homepage_splash.7fe174f8685528dcfdfa.png",
     "static/media/red_curtain.png": "/static/media/red_curtain.84d258c49ab18323bb2c.png",
@@ -12,11 +12,11 @@
     "static/media/GC_logo.png": "/static/media/GC_logo.6a322a76e3f2bd212709.png",
     "static/media/gamestats_bg.png": "/static/media/gamestats_bg.597787d514e4ebeb0d34.png",
     "index.html": "/index.html",
-    "main.390c69f5.css.map": "/static/css/main.390c69f5.css.map",
+    "main.b8171d59.css.map": "/static/css/main.b8171d59.css.map",
     "main.96d420e7.js.map": "/static/js/main.96d420e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.390c69f5.css",
+    "static/css/main.b8171d59.css",
     "static/js/main.96d420e7.js"
   ]
 }
