@@ -222,10 +222,15 @@
 
         background-color: var(--color-accent);
         background-image: none;
+        border: none;
     }
 
     .homepage-curtain {
         display: none;
+    }
+
+    .homepage-curtain-container {
+        border: none;
     }
 
     h2 {
