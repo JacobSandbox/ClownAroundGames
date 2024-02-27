@@ -244,6 +244,9 @@
     .homepage-splash {
         display: flex;
         flex-direction: column;
+
+        padding: 0;
+
         background-image: none;
     }
 
@@ -261,6 +264,8 @@
     .homepage-splash-img {
         margin:0;
         width: 100%;
+
+        flex: 2;
 
         background-size: cover;
         background-position: 0 50%;
