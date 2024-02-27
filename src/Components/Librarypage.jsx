@@ -202,7 +202,7 @@ function Librarypage() {
                     </span>
                     -
                 </div>
-
+                {(filter !== "all") ? <div className="library-clear-search"><Link to="/games/all">Clear Search</Link></div> : null}
                 <div className="library-browser">
                     {(hasData === true) ? libraryData.map( game => {
                         let arg = (filter === undefined) ? query.toString() : filter;

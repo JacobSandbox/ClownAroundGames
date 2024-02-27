@@ -62,14 +62,28 @@
 
     border: 2px solid lightgrey;
     border-radius: 1rem;
+}
 
-    /* box-shadow: 0 0 0 3px gray; */
+.library-clear-search {
+    display: none;
 
-    /* background-color: cadetblue; */
+    margin: 1rem;
+    padding: 0.5rem;
+
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+}
+
+.library-clear-search:hover {
+    background-color: var(--color-accent);
 }
 
 @media (orientation:portrait) {
     .library-controls {
         display: none;
+    }
+
+    .library-clear-search {
+        display: block;
     }
 }
