@@ -16,6 +16,7 @@ font-family: 'Yeseva One', serif;
     /* COLORS */
     --color-primary: yellowgreen;
     --color-accent: #985BFE;
+    --color-other: #dd3a13;
     --color-neutral: lightgray;
     --color-background: white;
 }

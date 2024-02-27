@@ -9,22 +9,26 @@
 
     position: absolute;
     inset: 0 0 0 0;
+    height: 432px;
 
     z-index: 100;
+
+    border: 0 solid black;
+    border-bottom-width: 0.5rem;
 
     pointer-events: none;
 }
 
 .homepage-curtain {
-    width: 189px;
+    width: 232px;
     height: 100%;
 
-    background-image: url("../images/curtain.png");
+    background-image: url("../images/red_curtain.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.homepage-curtain:first-child {
+.homepage-curtain:last-child {
     scale: -1 1;
 }
 
