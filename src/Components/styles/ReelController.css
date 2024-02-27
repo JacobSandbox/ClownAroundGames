@@ -129,6 +129,8 @@
         transform: none;
 
         background-color: transparent;
+
+        pointer-events: none;
     }
 
     .reel-controller * {
