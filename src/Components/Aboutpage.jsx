@@ -15,7 +15,7 @@ function Aboutpage() {
                 <h1>About</h1>
                 <p className="aboutpage-text">
                     My name is Jacob Salemi and in 2023 I created Clown Around Games.
-                    Born on the West Coast, USA, I have loved playing games as long as I can remember. Enraptured by each new rule and each little piece, my love for them grew over countless family game nights (most of which I started!) and each new game discovered. Whether it was card games or a board games, a tabletop or a video games, one thing i knew for certain: I had to make my own. <br />
+                    Born on the West Coast, USA, I have loved playing games as long as I can remember. Enraptured by each new rule and each little piece, my love for them grew over countless family game nights (most of which I started!) and each new game discovered. Whether it was card games or a board games, a tabletop or a video games, one thing I knew for certain: I had to make my own. <br />
                     This studio is the realization of that childhood dream. <br />
                     So what do I do here? I make games. Whatever kind I'm inspired to make! From art to rules, I create all of it. (But would love to partner with other creators in the future!) <br />
                     Independently produced and manufactured in the USA, my games are made for the love of gaming and the joy they bring to us. <br />
