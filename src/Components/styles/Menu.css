@@ -123,7 +123,8 @@ a:first-child > .menu-item {
 
 @media (orientation:portrait) {
      .menu-container {
-        width: 9rem;
+        margin: auto;
+        width: 8rem;
     }
 
     .menu-content {

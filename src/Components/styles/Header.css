@@ -12,7 +12,7 @@
     overflow: visible;
     
 }
-
+/*
 .header-title {
     margin: 0 1rem 0 0;
     flex: 1fr;
@@ -20,7 +20,7 @@
     text-align: left;
     font-family: var(--font-primary);
     font-size: 1.75rem;
-}
+} */
 
 .header-spacer {
     flex: auto;
@@ -33,10 +33,10 @@
 }
 
 @media (orientation:portrait) {
-    .header-title {
+    /* .header-title {
         flex: 1fr;
         font-size: 0.85rem;
-    }
+    } */
     
     .header-spacer {
         display: none;

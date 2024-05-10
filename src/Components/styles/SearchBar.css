@@ -40,6 +40,11 @@
 
 @media (orientation:portrait) {
     .search-form {
+        padding-top: 0.5rem;
         grid-area: auto / span 2;
+    }
+
+    .search-bar {
+        width: 80%;
     }
 }

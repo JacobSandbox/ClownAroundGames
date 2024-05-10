@@ -32,7 +32,7 @@ function Homepage() {
                 <div className="homepage-curtain"></div>
             </div>
             <div className="homepage-carousel-container">
-                <Carousel items={newsItems} itemCount="3" size="400" />
+                <Carousel items={newsItems} itemCount="3" />
             </div>
             <div className="homepage-banner"></div>
             <div className="homepage-quicklinks">
